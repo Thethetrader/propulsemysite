@@ -277,24 +277,24 @@ export default function ChatPage() {
         </div>
 
         {/* Zone de chat principale */}
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col md:flex-col">
           {/* Header channel */}
-          <div className="h-12 bg-white border-b border-gray-200 flex items-center justify-between px-4 shadow-sm relative">
-            <div className="flex items-center">
+          <div className="h-12 bg-white border-b border-gray-200 flex items-center px-4 shadow-sm relative md:relative fixed md:static top-0 left-0 right-0 z-10">
+            <div className="flex items-center w-full">
+              {!sidebarOpen && (
+                <button className="mr-3 md:hidden bg-white rounded-full shadow p-2" onClick={() => setSidebarOpen(true)}>
+                  <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+                </button>
+              )}
               <span className="text-lg mr-2">
                 {channels.find(ch => ch.name === selectedChannel)?.icon || '📁'}
               </span>
               <h2 className="font-semibold text-black">{selectedChannel}</h2>
-              {!sidebarOpen && (
-                <button className="absolute right-4 top-1 md:hidden bg-white rounded-full shadow p-2" onClick={() => setSidebarOpen(true)}>
-                  <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
-                </button>
-              )}
             </div>
           </div>
 
           {/* Messages */}
-          <div className="flex-1 p-4 overflow-y-auto">
+          <div className="flex-1 p-4 overflow-y-auto md:flex-1 md:p-4 md:overflow-y-auto pt-16 pb-32 md:pt-4 md:pb-4">
             {currentMessages.map((msg: Message) => (
               <div key={msg.id} className={`mb-4 hover:bg-gray-50 p-3 rounded-lg ${
                 msg.isWelcome ? 'bg-blue-50 border-l-4 border-blue-400' : ''
@@ -314,7 +314,7 @@ export default function ChatPage() {
           </div>
 
           {/* Zone de saisie */}
-          <div className="p-4 border-t border-gray-200">
+          <div className="p-4 border-t border-gray-200 md:p-4 md:border-t md:border-gray-200 fixed md:static bottom-0 left-0 right-0 bg-white z-10">
             {/* Aperçu des fichiers sélectionnés et zone d'upload */}
             {showFileUpload && (
               <div className="mb-4 p-3 bg-gray-50 rounded-lg">
