@@ -31,6 +31,20 @@ body {
   animation: slide-up 30s linear infinite;
 }
 
+/* Animation pour le défilement vertical mobile */
+@keyframes slide-up-mobile {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-75%);
+  }
+}
+
+.animate-slide-up-mobile {
+  animation: slide-up-mobile 180s linear infinite;
+}
+
 /* Effet de lumière au survol */
 .shadow-glow {
   box-shadow: 
@@ -42,6 +56,29 @@ body {
     0 0 200px rgba(255, 255, 255, 0.7);
   transform: scale(1.08);
   filter: brightness(1.2) contrast(1.1);
+}
+
+/* Effet d'ombre noir au survol */
+.shadow-black-glow {
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8) !important;
+  transform: scale(1.1) !important;
+  animation: bounce-shadow 0.8s ease-in-out infinite !important;
+}
+
+/* Animation de pulsation visible */
+@keyframes bounce-shadow {
+  0% {
+    transform: scale(1.1);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
+  }
+  50% {
+    transform: scale(1.2);
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 1);
+  }
+  100% {
+    transform: scale(1.1);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
+  }
 }
 
 /* Animation pour la bande défilante */

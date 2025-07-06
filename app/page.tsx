@@ -23,7 +23,7 @@ export default function Home() {
               <a href="#services" className="text-gray-600 hover:text-black transition">Services</a>
               <a href="#prix" className="text-gray-600 hover:text-black transition">Prix</a>
               <a href="#contact" className="text-gray-600 hover:text-black transition">Contact</a>
-              <a href="/login" className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition">
+              <a href="/chat" className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition">
                 Connexion
               </a>
             </nav>
@@ -41,7 +41,7 @@ export default function Home() {
             <a href="#services" className="text-lg font-medium text-gray-800" onClick={() => setMenuOpen(false)}>Services</a>
             <a href="#prix" className="text-lg font-medium text-gray-800" onClick={() => setMenuOpen(false)}>Prix</a>
             <a href="#contact" className="text-lg font-medium text-gray-800" onClick={() => setMenuOpen(false)}>Contact</a>
-            <a href="/login" className="bg-black text-white px-6 py-2 rounded-full text-center font-medium hover:bg-gray-800 transition" onClick={() => setMenuOpen(false)}>Connexion</a>
+            <a href="/chat" className="bg-black text-white px-6 py-2 rounded-full text-center font-medium hover:bg-gray-800 transition" onClick={() => setMenuOpen(false)}>Connexion</a>
           </div>
         </div>
       )}
@@ -49,7 +49,7 @@ export default function Home() {
       {/* Hero Section */}
       <main className="pt-24 w-full min-h-screen flex items-center relative overflow-hidden">
         {/* Images défilantes */}
-        <div className="absolute right-0 top-0 h-full w-1/3 flex flex-col overflow-hidden">
+        <div className="absolute right-0 top-0 h-full w-1/3 hidden md:flex flex-col overflow-hidden">
           <div className="animate-slide-up flex flex-col">
             <div className="w-full h-40 md:w-4/5 md:h-96 mb-4 rounded-lg overflow-hidden shadow-lg hover:shadow-glow transition-all duration-300 mx-auto">
               <img src="/site1.png" alt="Site 1" className="w-full h-full object-cover" />
@@ -85,10 +85,10 @@ export default function Home() {
           </div>
         </div>
         
-        <div className="w-2/3 px-8 py-20">
+        <div className="w-full md:w-2/3 px-8 py-20">
           <div className="text-center">
-            <h1 className="text-3xl md:text-6xl font-light text-black mb-8 leading-tight">
-              Créez votre site web professionnel
+            <h1 className="text-4xl md:text-8xl font-bold text-black mb-8 leading-tight">
+              Passez de l'idée à l'impact.
             </h1>
             <p className="text-base md:text-xl text-gray-600 mb-12 max-w-xl mx-auto leading-relaxed">
               Transformez votre vision en réalité digitale. Des sites web modernes, rapides et optimisés pour votre succès.
@@ -100,6 +100,78 @@ export default function Home() {
           </div>
         </div>
       </main>
+
+      {/* Section mobile uniquement - Photos défilantes verticales */}
+      <section className="md:hidden py-8 bg-white">
+        <div className="w-full overflow-hidden" style={{height: '752px'}}>
+          <div className="animate-slide-up-mobile flex flex-col">
+            {/* Premier set d'images */}
+            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
+              <img src="/site1.png" alt="Site 1" className="w-full h-full object-cover" />
+            </div>
+            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
+              <img src="/site2.png" alt="Site 2" className="w-full h-full object-cover" />
+            </div>
+            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
+              <img src="/site3.png" alt="Site 3" className="w-full h-full object-cover" />
+            </div>
+            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
+              <img src="/site4.png" alt="Site 4" className="w-full h-full object-cover" />
+            </div>
+            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
+              <img src="/site5.png" alt="Site 5" className="w-full h-full object-cover" />
+            </div>
+            {/* Deuxième set d'images */}
+            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
+              <img src="/site1.png" alt="Site 1" className="w-full h-full object-cover" />
+            </div>
+            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
+              <img src="/site2.png" alt="Site 2" className="w-full h-full object-cover" />
+            </div>
+            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
+              <img src="/site3.png" alt="Site 3" className="w-full h-full object-cover" />
+            </div>
+            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
+              <img src="/site4.png" alt="Site 4" className="w-full h-full object-cover" />
+            </div>
+            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
+              <img src="/site5.png" alt="Site 5" className="w-full h-full object-cover" />
+            </div>
+            {/* Troisième set d'images */}
+            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
+              <img src="/site1.png" alt="Site 1" className="w-full h-full object-cover" />
+            </div>
+            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
+              <img src="/site2.png" alt="Site 2" className="w-full h-full object-cover" />
+            </div>
+            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
+              <img src="/site3.png" alt="Site 3" className="w-full h-full object-cover" />
+            </div>
+            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
+              <img src="/site4.png" alt="Site 4" className="w-full h-full object-cover" />
+            </div>
+            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
+              <img src="/site5.png" alt="Site 5" className="w-full h-full object-cover" />
+            </div>
+            {/* Quatrième set d'images */}
+            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
+              <img src="/site1.png" alt="Site 1" className="w-full h-full object-cover" />
+            </div>
+            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
+              <img src="/site2.png" alt="Site 2" className="w-full h-full object-cover" />
+            </div>
+            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
+              <img src="/site3.png" alt="Site 3" className="w-full h-full object-cover" />
+            </div>
+            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
+              <img src="/site4.png" alt="Site 4" className="w-full h-full object-cover" />
+            </div>
+            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
+              <img src="/site5.png" alt="Site 5" className="w-full h-full object-cover" />
+            </div>
+          </div>
+        </div>
+      </section>
 
 
       {/* Section Prix */}
@@ -115,154 +187,135 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="flex md:grid md:grid-cols-3 gap-8 overflow-x-auto md:overflow-visible pb-4 md:pb-0">
+          <div className="grid md:grid-cols-3 gap-8 items-stretch">
             {/* Formule Starter */}
-            <div className="relative bg-white rounded-2xl p-4 md:p-8 border-4 border-transparent md:hover:border-4 md:hover:border-transparent md:hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl md:hover:shadow-lg group overflow-hidden min-w-[240px] max-w-xs mx-2 md:min-w-0 md:max-w-none md:mx-0"
-              style={{boxShadow: '0 0 0 4px transparent'}}>
-              <div className="relative z-20 text-center md:text-center">
-                <h3 className="text-base md:text-2xl font-semibold text-black mb-2">Starter</h3>
-                <p className="text-xs md:text-sm text-gray-500 mb-4">Parfait pour débuter</p>
-                <div className="text-xl md:text-4xl font-bold text-gray-800 mb-6">
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-black-glow transition-all duration-300 flex flex-col h-full">
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-semibold text-black mb-2">Starter</h3>
+                <p className="text-sm text-gray-500 mb-4">Parfait pour débuter</p>
+                <div className="text-4xl font-bold text-gray-800">
                   799€
                 </div>
-                <ul className="text-left md:text-left space-y-4 text-gray-600 mb-8 text-xs md:text-base">
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span><strong>Site vitrine professionnel</strong><br/>
-                    <span className="text-sm text-gray-500">5 pages optimisées (Accueil, Services, À propos, Contact, Mentions légales)</span></span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span><strong>Design responsive premium</strong><br/>
-                    <span className="text-sm text-gray-500">Adapté mobile, tablette et desktop</span></span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span><strong>Hébergement sécurisé inclus</strong><br/>
-                    <span className="text-sm text-gray-500">12 mois + nom de domaine offert</span></span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span><strong>Support technique</strong><br/>
-                    <span className="text-sm text-gray-500">Assistance par email sous 24h</span></span>
-                  </li>
-                </ul>
-                <button className="w-full bg-black text-white py-2 md:py-3 rounded-full hover:bg-gray-800 transition font-medium text-xs md:text-base">
-                  Démarrer mon projet
-                </button>
               </div>
+              
+              <ul className="text-left space-y-3 text-gray-600 flex-grow mb-8">
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">✓</span>
+                  <span><strong>Site vitrine professionnel</strong><br/>
+                  <span className="text-sm text-gray-500">5 pages optimisées</span></span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">✓</span>
+                  <span><strong>Design responsive premium</strong><br/>
+                  <span className="text-sm text-gray-500">Adapté mobile et desktop</span></span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">✓</span>
+                  <span><strong>Hébergement sécurisé inclus</strong><br/>
+                  <span className="text-sm text-gray-500">12 mois + domaine offert</span></span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">✓</span>
+                  <span><strong>Support technique</strong><br/>
+                  <span className="text-sm text-gray-500">Assistance email sous 24h</span></span>
+                </li>
+              </ul>
+              
+              <button className="w-full bg-black text-white py-3 rounded-full hover:bg-gray-800 transition font-medium">
+                Démarrer mon projet
+              </button>
             </div>
 
             {/* Formule Pro */}
-            <div className="relative bg-white rounded-2xl p-4 md:p-8 border-4 border-transparent md:hover:border-4 md:hover:border-transparent md:hover:scale-110 transition-all duration-300 shadow-2xl group overflow-hidden min-w-[240px] max-w-xs mx-2 md:min-w-0 md:max-w-none md:mx-0"
-              style={{boxShadow: '0 0 0 4px transparent'}}>
-              <div className="relative z-20 text-center md:text-center">
-                <div className="bg-black text-white text-sm px-4 py-1 rounded-full inline-block mb-4">
+            <div className="bg-white rounded-2xl p-8 shadow-xl border-2 border-black relative flex flex-col h-full hover:shadow-black-glow transition-all duration-300">
+              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                <div className="bg-black text-white text-sm px-4 py-1 rounded-full">
                   🔥 Recommandé
                 </div>
-                <h3 className="text-base md:text-2xl font-semibold text-black mb-2">Pro</h3>
-                <p className="text-xs md:text-sm text-gray-500 mb-4">Pour entreprises ambitieuses</p>
-                <div className="text-4xl font-bold text-gray-800 mb-6">
+              </div>
+              
+              <div className="text-center mb-6 mt-4">
+                <h3 className="text-2xl font-semibold text-black mb-2">Pro</h3>
+                <p className="text-sm text-gray-500 mb-4">Pour entreprises ambitieuses</p>
+                <div className="text-4xl font-bold text-gray-800">
                   1299€
                 </div>
-                <ul className="text-left space-y-4 text-gray-600 mb-8 text-xs md:text-base">
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span><strong>Site web professionnel</strong><br/>
-                    <span className="text-sm text-gray-500">Jusqu'à 10 pages + blog intégré</span></span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span><strong>Design sur mesure</strong><br/>
-                    <span className="text-sm text-gray-500">Identité visuelle personnalisée</span></span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span><strong>Espace client Discord</strong><br/>
-                    <span className="text-sm text-gray-500">Suivi projet en temps réel</span></span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span><strong>Module e-commerce basique</strong><br/>
-                    <span className="text-sm text-gray-500">Boutique en ligne + paiements</span></span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span><strong>Optimisation SEO</strong><br/>
-                    <span className="text-sm text-gray-500">Référencement Google de base</span></span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span><strong>Référencement LLMFind</strong><br/>
-                    <span className="text-sm text-gray-500">Indexation sur moteur IA spécialisé</span></span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span><strong>Support prioritaire</strong><br/>
-                    <span className="text-sm text-gray-500">Assistance sous 4h ouvrées</span></span>
-                  </li>
-                </ul>
-                <button className="w-full bg-black text-white py-3 rounded-full hover:bg-gray-800 transition font-medium">
-                  Accélérer ma croissance
-                </button>
               </div>
+              
+              <ul className="text-left space-y-3 text-gray-600 flex-grow mb-8">
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">✓</span>
+                  <span><strong>Site web professionnel</strong><br/>
+                  <span className="text-sm text-gray-500">Jusqu'à 10 pages + blog</span></span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">✓</span>
+                  <span><strong>Design sur mesure</strong><br/>
+                  <span className="text-sm text-gray-500">Identité visuelle personnalisée</span></span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">✓</span>
+                  <span><strong>Espace client Discord</strong><br/>
+                  <span className="text-sm text-gray-500">Suivi projet temps réel</span></span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">✓</span>
+                  <span><strong>Module e-commerce</strong><br/>
+                  <span className="text-sm text-gray-500">Boutique en ligne + paiements</span></span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">✓</span>
+                  <span><strong>Optimisation SEO</strong><br/>
+                  <span className="text-sm text-gray-500">Référencement Google</span></span>
+                </li>
+              </ul>
+              
+              <button className="w-full bg-black text-white py-3 rounded-full hover:bg-gray-800 transition font-medium">
+                Accélérer ma croissance
+              </button>
             </div>
 
             {/* Formule Premium */}
-            <div className="relative bg-white rounded-2xl p-4 md:p-8 border-4 border-transparent md:hover:border-4 md:hover:border-transparent md:hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl md:hover:shadow-lg group overflow-hidden min-w-[240px] max-w-xs mx-2 md:min-w-0 md:max-w-none md:mx-0"
-              style={{boxShadow: '0 0 0 4px transparent'}}>
-              <div className="relative z-20 text-center md:text-center">
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-black-glow transition-all duration-300 flex flex-col h-full">
+              <div className="text-center mb-6">
                 <h3 className="text-2xl font-semibold text-black mb-2">Premium</h3>
                 <p className="text-sm text-gray-500 mb-4">Solution complète sur mesure</p>
-                <div className="text-4xl font-bold text-gray-800 mb-6">
+                <div className="text-4xl font-bold text-gray-800">
                   1999€
                 </div>
-                <ul className="text-left space-y-4 text-gray-600 mb-8">
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span><strong>Plateforme web illimitée</strong><br/>
-                    <span className="text-sm text-gray-500">Pages illimitées + architecture sur mesure</span></span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span><strong>Design 100% unique & premium</strong><br/>
-                    <span className="text-sm text-gray-500">Identité visuelle complète + charte graphique</span></span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span><strong>E-commerce avancé complet</strong><br/>
-                    <span className="text-sm text-gray-500">Gestion stocks, factures, analytics, multi-devises</span></span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span><strong>SEO professionnel + marketing</strong><br/>
-                    <span className="text-sm text-gray-500">Audit SEO complet + stratégie de contenu</span></span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span><strong>Référencement LLMFind Premium</strong><br/>
-                    <span className="text-sm text-gray-500">Indexation prioritaire + optimisation IA</span></span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span><strong>Accompagnement VIP dédié</strong><br/>
-                    <span className="text-sm text-gray-500">Chef de projet + formations + consultations</span></span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span><strong>Maintenance premium 24 mois</strong><br/>
-                    <span className="text-sm text-gray-500">Évolutions illimitées + support 24h/7j</span></span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2">✓</span>
-                    <span><strong>Fonctionnalités avancées</strong><br/>
-                    <span className="text-sm text-gray-500">CRM intégré, automatisations, API custom</span></span>
-                  </li>
-                </ul>
-                <button className="w-full bg-black text-white py-3 rounded-full hover:bg-gray-800 transition font-medium">
-                  Dominer mon marché
-                </button>
               </div>
+              
+              <ul className="text-left space-y-3 text-gray-600 flex-grow mb-8">
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">✓</span>
+                  <span><strong>Plateforme web illimitée</strong><br/>
+                  <span className="text-sm text-gray-500">Pages illimitées + architecture</span></span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">✓</span>
+                  <span><strong>Design 100% unique</strong><br/>
+                  <span className="text-sm text-gray-500">Identité visuelle complète</span></span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">✓</span>
+                  <span><strong>E-commerce avancé</strong><br/>
+                  <span className="text-sm text-gray-500">Gestion stocks + analytics</span></span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">✓</span>
+                  <span><strong>SEO professionnel</strong><br/>
+                  <span className="text-sm text-gray-500">Audit SEO + stratégie</span></span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">✓</span>
+                  <span><strong>Accompagnement VIP</strong><br/>
+                  <span className="text-sm text-gray-500">Chef projet + formations</span></span>
+                </li>
+              </ul>
+              
+              <button className="w-full bg-black text-white py-3 rounded-full hover:bg-gray-800 transition font-medium">
+                Dominer mon marché
+              </button>
             </div>
           </div>
         </div>
@@ -315,32 +368,97 @@ export default function Home() {
 function ContactForm() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [projectName, setProjectName] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [projectDescription, setProjectDescription] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const subject = encodeURIComponent('Demande de contact depuis Propulsemysite');
-    const body = encodeURIComponent(`Nom: ${name}\nEmail: ${email}\n\n${message}`);
+    const body = encodeURIComponent(`Nom complet: ${name}\nEmail: ${email}\nNom du projet: ${projectName}\nNuméro de téléphone: ${phoneNumber}\n\nDescription du projet:\n${projectDescription}`);
     window.location.href = `mailto:contact@propulsemysite.com?subject=${subject}&body=${body}`;
   };
 
   return (
-    <div className="flex items-center justify-center bg-gray-50 px-4 pt-2 pb-8">
-      <form onSubmit={handleSubmit} className="bg-white rounded-3xl shadow-2xl p-12 w-full max-w-xl border border-gray-100">
-        <h2 className="text-3xl font-extrabold mb-8 text-center text-black tracking-tight">Contactez-nous</h2>
-        <div className="mb-6">
-          <label className="block text-gray-700 mb-2 text-lg">Nom</label>
-          <input type="text" value={name} onChange={e => setName(e.target.value)} required className="w-full px-5 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-black bg-gray-50 text-base" />
+    <div className="flex items-center justify-center bg-white px-4 py-16">
+      <form onSubmit={handleSubmit} className="bg-white rounded-3xl shadow-xl p-8 w-full max-w-3xl hover:shadow-black-glow transition-all duration-300">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold mb-4 text-black">Contact / Réserver un appel</h2>
+          <p className="text-gray-600 leading-relaxed">
+            Pour nous contacter, veuillez remplir le formulaire ci-dessous. L'étape finale 
+            consiste à <strong>réserver votre appel de découverte gratuit</strong> directement sur l'écran 
+            suivant.
+          </p>
         </div>
-        <div className="mb-6">
-          <label className="block text-gray-700 mb-2 text-lg">Email</label>
-          <input type="email" value={email} onChange={e => setEmail(e.target.value)} required className="w-full px-5 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-black bg-gray-50 text-base" />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <label className="block text-gray-800 font-semibold mb-2">Nom complet</label>
+            <input 
+              type="text" 
+              value={name} 
+              onChange={e => setName(e.target.value)} 
+              placeholder="Jean Dupont"
+              required 
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-black bg-gray-50" 
+            />
+          </div>
+          
+          <div>
+            <label className="block text-gray-800 font-semibold mb-2">Email</label>
+            <input 
+              type="email" 
+              value={email} 
+              onChange={e => setEmail(e.target.value)} 
+              placeholder="jean@email.com"
+              required 
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-black bg-gray-50" 
+            />
+          </div>
         </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <label className="block text-gray-800 font-semibold mb-2">Nom du projet</label>
+            <input 
+              type="text" 
+              value={projectName} 
+              onChange={e => setProjectName(e.target.value)} 
+              placeholder="Nom de votre projet"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-black bg-gray-50" 
+            />
+          </div>
+          
+          <div>
+            <label className="block text-gray-800 font-semibold mb-2">Numéro de téléphone</label>
+            <input 
+              type="tel" 
+              value={phoneNumber} 
+              onChange={e => setPhoneNumber(e.target.value)} 
+              placeholder="06 12 34 56 78"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-black bg-gray-50" 
+            />
+          </div>
+        </div>
+
         <div className="mb-8">
-          <label className="block text-gray-700 mb-2 text-lg">Message</label>
-          <textarea value={message} onChange={e => setMessage(e.target.value)} required rows={6} className="w-full px-5 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-black bg-gray-50 text-base resize-none" />
+          <label className="block text-gray-800 font-semibold mb-2">Expliquez brièvement votre projet</label>
+          <textarea 
+            value={projectDescription} 
+            onChange={e => setProjectDescription(e.target.value)} 
+            placeholder="Décrivez en quelques lignes votre projet, vos besoins ou vos attentes..."
+            required 
+            rows={5} 
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-black bg-gray-50 resize-none" 
+          />
         </div>
-        <button type="submit" className="w-full bg-black text-white py-4 rounded-full font-bold text-lg shadow hover:bg-gray-800 transition">Envoyer</button>
+
+        <button 
+          type="submit" 
+          className="w-full bg-black text-white py-4 rounded-full font-semibold text-lg hover:bg-gray-800 transition-colors"
+        >
+          Envoyer
+        </button>
       </form>
     </div>
   );
