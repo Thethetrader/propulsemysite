@@ -20,7 +20,7 @@ export default function ChatPage() {
   const [callingUser, setCallingUser] = useState<string | null>(null)
   const [sidebarOpen, setSidebarOpen] = useState(true)
   const [showFileUpload, setShowFileUpload] = useState(false)
-  const [allMessages, setAllMessages] = useState<{[key: string]: Message[]}>({})
+  const [messagesMap, setMessagesMap] = useState<{[key: string]: Message[]}>({})
 
   // WebRTC hook
   const {
@@ -102,17 +102,17 @@ export default function ChatPage() {
 
   // Initialiser les messages par défaut si pas encore chargés
   const defaultMessages = messagesByChannel[selectedChannel as keyof typeof messagesByChannel] || []
-  const currentMessages = allMessages[selectedChannel] || defaultMessages
+  const currentMessages = messagesMap[selectedChannel] || defaultMessages
 
   // Initialiser le canal avec les messages par défaut s'il n'existe pas encore
   React.useEffect(() => {
-    if (!allMessages[selectedChannel]) {
-      setAllMessages(prev => ({
+    if (!messagesMap[selectedChannel]) {
+      setMessagesMap(prev => ({
         ...prev,
         [selectedChannel]: defaultMessages
       }))
     }
-  }, [selectedChannel, defaultMessages, allMessages])
+  }, [selectedChannel, defaultMessages, messagesMap])
 
   const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(event.target.files || [])
@@ -184,7 +184,7 @@ export default function ChatPage() {
     }
 
     // Ajouter le message au canal actuel
-    setAllMessages(prev => ({
+    setMessagesMap(prev => ({
       ...prev,
       [selectedChannel]: [...(prev[selectedChannel] || defaultMessages), newMessage]
     }))
