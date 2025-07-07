@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import { useWebRTC } from '../../lib/useWebRTC'
 
 interface Message {
   id: number
@@ -16,14 +17,27 @@ export default function ChatPage() {
   const [selectedFiles, setSelectedFiles] = useState<File[]>([])
   const [isDragging, setIsDragging] = useState(false)
   const [isRightSidebarOpen, setIsRightSidebarOpen] = useState(true)
-  const [isCallActive, setIsCallActive] = useState(false)
   const [callingUser, setCallingUser] = useState<string | null>(null)
-  const [isMuted, setIsMuted] = useState(false)
-  const [isVideoOff, setIsVideoOff] = useState(false)
-  const [isScreenSharing, setIsScreenSharing] = useState(false)
-  const [allMessages, setAllMessages] = useState<{[key: string]: Message[]}>({})
   const [sidebarOpen, setSidebarOpen] = useState(true)
   const [showFileUpload, setShowFileUpload] = useState(false)
+  const [allMessages, setAllMessages] = useState<{[key: string]: Message[]}>({})
+
+  // WebRTC hook
+  const {
+    localStream,
+    remoteStream,
+    isCallActive,
+    startCall: rtcStartCall,
+    endCall: rtcEndCall,
+    toggleMute: rtcToggleMute,
+    toggleVideo: rtcToggleVideo,
+    toggleScreenShare: rtcToggleScreenShare,
+    isMuted,
+    isVideoOff,
+    isScreenSharing,
+    localVideoRef,
+    remoteVideoRef
+  } = useWebRTC()
 
   const channels = [
     { 
@@ -141,32 +155,21 @@ export default function ChatPage() {
     return '📁'
   }
 
-  const startCall = (userName: string) => {
-    setCallingUser(userName)
-    setIsCallActive(true)
-    setIsMuted(false)
-    setIsVideoOff(false)
+  const startCall = async (userName: string) => {
+    const ok = await rtcStartCall(true)
+    if (ok) {
+      setCallingUser(userName)
+    }
   }
 
   const endCall = () => {
-    setIsCallActive(false)
+    rtcEndCall()
     setCallingUser(null)
-    setIsMuted(false)
-    setIsVideoOff(false)
-    setIsScreenSharing(false)
   }
 
-  const toggleMute = () => {
-    setIsMuted(!isMuted)
-  }
-
-  const toggleVideo = () => {
-    setIsVideoOff(!isVideoOff)
-  }
-
-  const toggleScreenShare = () => {
-    setIsScreenSharing(!isScreenSharing)
-  }
+  const toggleMute = () => rtcToggleMute()
+  const toggleVideo = () => rtcToggleVideo()
+  const toggleScreenShare = () => rtcToggleScreenShare()
 
   // Fonction pour envoyer un message
   const sendMessage = () => {
@@ -477,8 +480,10 @@ export default function ChatPage() {
 
               {/* Zone vidéo simulée */}
               <div className="relative mb-6">
-                <div className="bg-gray-900 rounded-xl h-48 flex items-center justify-center">
-                  {isScreenSharing ? (
+                <div className="bg-gray-900 rounded-xl h-48 flex items-center justify-center relative overflow-hidden">
+                  {remoteStream ? (
+                    <video ref={remoteVideoRef} className="w-full h-full object-cover" autoPlay playsInline />
+                  ) : isScreenSharing ? (
                     <div className="text-center">
                       <div className="w-16 h-16 bg-green-500 rounded-lg flex items-center justify-center mx-auto mb-2">
                         <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -510,8 +515,12 @@ export default function ChatPage() {
                 </div>
                 
                 {/* Petite fenêtre "moi" */}
-                <div className="absolute bottom-4 right-4 w-16 h-12 bg-gray-800 rounded-lg flex items-center justify-center">
-                  <span className="text-white text-xs">Moi</span>
+                <div className="absolute bottom-4 right-4 w-16 h-12 bg-gray-800 rounded-lg flex items-center justify-center overflow-hidden">
+                  {localStream ? (
+                    <video ref={localVideoRef} className="w-full h-full object-cover" muted autoPlay playsInline />
+                  ) : (
+                    <span className="text-white text-xs">Moi</span>
+                  )}
                 </div>
                 
                 {/* Indicateur de partage d'écran */}
