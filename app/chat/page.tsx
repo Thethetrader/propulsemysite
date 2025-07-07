@@ -119,6 +119,7 @@ export default function ChatPage() {
   // Fetch client name once
   useEffect(() => {
     async function fetchClient() {
+      if (!supabase) return // Pas de client Supabase en build
       const { data, error } = await supabase
         .from('clients')
         .select('name')
