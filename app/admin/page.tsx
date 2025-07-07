@@ -57,6 +57,15 @@ export default function AdminPage() {
     { id: '2', name: 'Blog Personnel', client_name: 'Pierre Martin', status: 'Terminé', created_at: '2024-01-21' },
   ]
 
+  async function deleteClient(id: string) {
+    if (!supabase) return
+    const confirm = window.confirm('Supprimer ce client ?')
+    if (!confirm) return
+    await supabase.from('clients').delete().eq('id', id)
+    // rafraîchir la liste
+    setClients(prev => prev.filter(c => c.id !== id))
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -154,7 +163,7 @@ export default function AdminPage() {
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                         <button className="text-black hover:underline mr-4">Éditer</button>
-                        <button className="text-red-600 hover:underline">Supprimer</button>
+                        <button onClick={() => deleteClient(client.id)} className="text-red-600 hover:underline">Supprimer</button>
                       </td>
                     </tr>
                   ))}
