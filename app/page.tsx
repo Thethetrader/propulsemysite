@@ -105,7 +105,7 @@ export default function Home() {
             </p>
 
             {/* Avantages clés */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-8">
+            <div className="grid grid-cols-2 landscape:grid-cols-4 md:grid-cols-4 gap-4 md:gap-6 mb-8">
               <div className="bg-gray-50 rounded-2xl p-4 md:p-6 text-center shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105">
                 <div className="text-3xl md:text-4xl mb-2 select-none" role="img" aria-label="Palette">🎨</div>
                 <h3 className="text-sm md:text-base font-semibold mb-1">Créez votre image de marque</h3>
