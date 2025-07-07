@@ -197,18 +197,18 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8 items-stretch">
+          <div className="grid md:grid-cols-3 gap-8 items-stretch landscape:grid-cols-3 landscape:gap-4">
             {/* Formule Starter */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 flex flex-col h-full">
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-semibold text-black mb-2">Starter</h3>
-                <p className="text-sm text-gray-500 mb-4">Parfait pour débuter</p>
-                <div className="text-4xl font-bold text-gray-800">
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 flex flex-col h-full landscape:p-4">
+              <div className="text-center mb-6 landscape:mb-3">
+                <h3 className="text-2xl font-semibold text-black mb-2 landscape:text-xl landscape:mb-1">Starter</h3>
+                <p className="text-sm text-gray-500 mb-4 landscape:text-xs landscape:mb-2">Parfait pour débuter</p>
+                <div className="text-4xl font-bold text-gray-800 landscape:text-2xl">
                   799€
                 </div>
               </div>
               
-              <ul className="text-left space-y-3 text-gray-600 flex-grow mb-8">
+              <ul className="text-left space-y-3 text-gray-600 flex-grow mb-8 landscape:space-y-2 landscape:mb-4">
                 <li className="flex items-start">
                   <span className="text-green-500 mr-2">✓</span>
                   <span><strong>Site vitrine professionnel</strong><br/>
@@ -222,38 +222,28 @@ export default function Home() {
                 <li className="flex items-start">
                   <span className="text-green-500 mr-2">✓</span>
                   <span><strong>Hébergement sécurisé inclus</strong><br/>
-                  <span className="text-sm text-gray-500">12 mois + domaine offert</span></span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
-                  <span><strong>Support technique</strong><br/>
-                  <span className="text-sm text-gray-500">Assistance email sous 24h</span></span>
+                  <span className="text-sm text-gray-500">1 an offert</span></span>
                 </li>
               </ul>
-              
-              <button className="w-full bg-black text-white py-3 rounded-full hover:bg-gray-800 transition font-medium"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
-                Démarrer mon projet
+              <button className="bg-black text-white px-8 py-3 rounded-full text-base font-medium hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 landscape:px-4 landscape:py-2 landscape:text-sm">
+                Choisir Starter
               </button>
             </div>
-
             {/* Formule Pro */}
-            <div className="bg-white rounded-2xl p-8 shadow-xl border-2 border-black relative flex flex-col h-full hover:shadow-black-glow transition-all duration-300 transform hover:scale-105">
+            <div className="bg-white rounded-2xl p-8 shadow-xl border-2 border-black relative flex flex-col h-full hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 landscape:p-4">
               <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                <div className="bg-black text-white text-sm px-4 py-1 rounded-full">
+                <div className="bg-black text-white text-sm px-4 py-1 rounded-full landscape:text-xs landscape:px-2 landscape:py-0.5">
                   🔥 Recommandé
                 </div>
               </div>
-              
-              <div className="text-center mb-6 mt-4">
-                <h3 className="text-2xl font-semibold text-black mb-2">Pro</h3>
-                <p className="text-sm text-gray-500 mb-4">Pour entreprises ambitieuses</p>
-                <div className="text-4xl font-bold text-gray-800">
+              <div className="text-center mb-6 mt-4 landscape:mb-3 landscape:mt-2">
+                <h3 className="text-2xl font-semibold text-black mb-2 landscape:text-xl landscape:mb-1">Pro</h3>
+                <p className="text-sm text-gray-500 mb-4 landscape:text-xs landscape:mb-2">Pour entreprises ambitieuses</p>
+                <div className="text-4xl font-bold text-gray-800 landscape:text-2xl">
                   1299€
                 </div>
               </div>
-              
-              <ul className="text-left space-y-3 text-gray-600 flex-grow mb-8">
+              <ul className="text-left space-y-3 text-gray-600 flex-grow mb-8 landscape:space-y-2 landscape:mb-4">
                 <li className="flex items-start">
                   <span className="text-green-500 mr-2">✓</span>
                   <span><strong>Site web professionnel</strong><br/>
@@ -267,37 +257,23 @@ export default function Home() {
                 <li className="flex items-start">
                   <span className="text-green-500 mr-2">✓</span>
                   <span><strong>Espace client Discord</strong><br/>
-                  <span className="text-sm text-gray-500">Suivi projet temps réel</span></span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
-                  <span><strong>Module e-commerce</strong><br/>
-                  <span className="text-sm text-gray-500">Boutique en ligne + paiements</span></span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
-                  <span><strong>Optimisation SEO</strong><br/>
-                  <span className="text-sm text-gray-500">Référencement Google</span></span>
+                  <span className="text-sm text-gray-500">Support & communauté</span></span>
                 </li>
               </ul>
-              
-              <button className="w-full bg-black text-white py-3 rounded-full hover:bg-gray-800 transition font-medium"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
-                Accélérer ma croissance
+              <button className="bg-black text-white px-8 py-3 rounded-full text-base font-medium hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 landscape:px-4 landscape:py-2 landscape:text-sm">
+                Choisir Pro
               </button>
             </div>
-
             {/* Formule Premium */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 flex flex-col h-full">
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-semibold text-black mb-2">Premium</h3>
-                <p className="text-sm text-gray-500 mb-4">Solution complète sur mesure</p>
-                <div className="text-4xl font-bold text-gray-800">
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 flex flex-col h-full landscape:p-4">
+              <div className="text-center mb-6 landscape:mb-3">
+                <h3 className="text-2xl font-semibold text-black mb-2 landscape:text-xl landscape:mb-1">Premium</h3>
+                <p className="text-sm text-gray-500 mb-4 landscape:text-xs landscape:mb-2">Solution complète sur mesure</p>
+                <div className="text-4xl font-bold text-gray-800 landscape:text-2xl">
                   1999€
                 </div>
               </div>
-              
-              <ul className="text-left space-y-3 text-gray-600 flex-grow mb-8">
+              <ul className="text-left space-y-3 text-gray-600 flex-grow mb-8 landscape:space-y-2 landscape:mb-4">
                 <li className="flex items-start">
                   <span className="text-green-500 mr-2">✓</span>
                   <span><strong>Plateforme web illimitée</strong><br/>
@@ -311,23 +287,11 @@ export default function Home() {
                 <li className="flex items-start">
                   <span className="text-green-500 mr-2">✓</span>
                   <span><strong>E-commerce avancé</strong><br/>
-                  <span className="text-sm text-gray-500">Gestion stocks + analytics</span></span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
-                  <span><strong>SEO professionnel</strong><br/>
-                  <span className="text-sm text-gray-500">Audit SEO + stratégie</span></span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
-                  <span><strong>Accompagnement VIP</strong><br/>
-                  <span className="text-sm text-gray-500">Chef projet + formations</span></span>
+                  <span className="text-sm text-gray-500">Paiement, gestion, stats</span></span>
                 </li>
               </ul>
-              
-              <button className="w-full bg-black text-white py-3 rounded-full hover:bg-gray-800 transition font-medium"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
-                Dominer mon marché
+              <button className="bg-black text-white px-8 py-3 rounded-full text-base font-medium hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 landscape:px-4 landscape:py-2 landscape:text-sm">
+                Choisir Premium
               </button>
             </div>
           </div>
