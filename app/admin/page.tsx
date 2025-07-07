@@ -1,7 +1,8 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { supabase } from '../../lib/supabase'
 
 export default function AdminPage() {
   const [activeTab, setActiveTab] = useState('clients')
@@ -16,6 +17,23 @@ export default function AdminPage() {
     projectDescription: '',
     password: ''
   })
+
+  // Liste dynamique récupérée de Supabase
+  const [clients, setClients] = useState<any[]>([])
+
+  useEffect(() => {
+    async function fetchClients() {
+      if (!supabase) return
+      const { data, error } = await supabase
+        .from('clients')
+        .select('id, name, email, created_at')
+        .order('created_at', { ascending: false })
+      if (!error && data) {
+        setClients(data as any[])
+      }
+    }
+    fetchClients()
+  }, [])
 
   const generatePassword = () => {
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
@@ -33,12 +51,6 @@ export default function AdminPage() {
     setShowAddClient(false)
     setClientForm({ name: '', email: '', projectName: '', projectDescription: '', password: '' })
   }
-
-  // Données exemple
-  const clients = [
-    { id: '1', name: 'Marie Dupont', email: 'marie@example.com', created_at: '2024-01-15' },
-    { id: '2', name: 'Pierre Martin', email: 'pierre@example.com', created_at: '2024-01-20' },
-  ]
 
   const projects = [
     { id: '1', name: 'Site E-commerce', client_name: 'Marie Dupont', status: 'En cours', created_at: '2024-01-16' },
