@@ -45,20 +45,6 @@ body {
   animation: slide-up-mobile 180s linear infinite;
 }
 
-/* Animation pour le défilement horizontal mobile en mode landscape */
-@keyframes slide-horizontal-mobile {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-75%);
-  }
-}
-
-.animate-slide-horizontal-mobile {
-  animation: slide-horizontal-mobile 180s linear infinite;
-}
-
 /* Effet de lumière au survol */
 .shadow-glow {
   box-shadow: 

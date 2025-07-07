@@ -11,9 +11,12 @@ export default function Home() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="text-2xl font-bold text-black">
+            <button 
+              className="text-2xl font-bold text-black hover:text-gray-600 transition-colors cursor-pointer"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
               Propulsemysite
-            </div>
+            </button>
             <button className="md:hidden ml-auto p-2" onClick={() => setMenuOpen(true)}>
               <span className="block w-6 h-0.5 bg-black mb-1"></span>
               <span className="block w-6 h-0.5 bg-black mb-1"></span>
@@ -105,81 +108,11 @@ export default function Home() {
               Commencer maintenant
             </button>
           </div>
-          
-          {/* Section mobile landscape uniquement - Photos défilantes horizontales */}
-          <div className="md:hidden landscape:block portrait:hidden mt-8 w-full overflow-hidden" style={{height: '240px'}}>
-            <div className="animate-slide-horizontal-mobile flex">
-              {/* Premier set d'images */}
-              <div className="w-80 h-60 mr-4 rounded-lg overflow-hidden shadow-lg flex-shrink-0">
-                <img src="/site1.png?v=2024" alt="Site 1" className="w-full h-full object-cover" />
-              </div>
-              <div className="w-80 h-60 mr-4 rounded-lg overflow-hidden shadow-lg flex-shrink-0">
-                <img src="/site2.png?v=2024" alt="Site 2" className="w-full h-full object-cover" />
-              </div>
-              <div className="w-80 h-60 mr-4 rounded-lg overflow-hidden shadow-lg flex-shrink-0">
-                <img src="/site3.png?v=2024" alt="Site 3" className="w-full h-full object-cover" />
-              </div>
-              <div className="w-80 h-60 mr-4 rounded-lg overflow-hidden shadow-lg flex-shrink-0">
-                <img src="/site4.png?v=2024" alt="Site 4" className="w-full h-full object-cover" />
-              </div>
-              <div className="w-80 h-60 mr-4 rounded-lg overflow-hidden shadow-lg flex-shrink-0">
-                <img src="/site5.png?v=2024" alt="Site 5" className="w-full h-full object-cover" />
-              </div>
-              {/* Deuxième set d'images */}
-              <div className="w-80 h-60 mr-4 rounded-lg overflow-hidden shadow-lg flex-shrink-0">
-                <img src="/site1.png?v=2024" alt="Site 1" className="w-full h-full object-cover" />
-              </div>
-              <div className="w-80 h-60 mr-4 rounded-lg overflow-hidden shadow-lg flex-shrink-0">
-                <img src="/site2.png?v=2024" alt="Site 2" className="w-full h-full object-cover" />
-              </div>
-              <div className="w-80 h-60 mr-4 rounded-lg overflow-hidden shadow-lg flex-shrink-0">
-                <img src="/site3.png?v=2024" alt="Site 3" className="w-full h-full object-cover" />
-              </div>
-              <div className="w-80 h-60 mr-4 rounded-lg overflow-hidden shadow-lg flex-shrink-0">
-                <img src="/site4.png?v=2024" alt="Site 4" className="w-full h-full object-cover" />
-              </div>
-              <div className="w-80 h-60 mr-4 rounded-lg overflow-hidden shadow-lg flex-shrink-0">
-                <img src="/site5.png?v=2024" alt="Site 5" className="w-full h-full object-cover" />
-              </div>
-              {/* Troisième set d'images */}
-              <div className="w-80 h-60 mr-4 rounded-lg overflow-hidden shadow-lg flex-shrink-0">
-                <img src="/site1.png?v=2024" alt="Site 1" className="w-full h-full object-cover" />
-              </div>
-              <div className="w-80 h-60 mr-4 rounded-lg overflow-hidden shadow-lg flex-shrink-0">
-                <img src="/site2.png?v=2024" alt="Site 2" className="w-full h-full object-cover" />
-              </div>
-              <div className="w-80 h-60 mr-4 rounded-lg overflow-hidden shadow-lg flex-shrink-0">
-                <img src="/site3.png?v=2024" alt="Site 3" className="w-full h-full object-cover" />
-              </div>
-              <div className="w-80 h-60 mr-4 rounded-lg overflow-hidden shadow-lg flex-shrink-0">
-                <img src="/site4.png?v=2024" alt="Site 4" className="w-full h-full object-cover" />
-              </div>
-              <div className="w-80 h-60 mr-4 rounded-lg overflow-hidden shadow-lg flex-shrink-0">
-                <img src="/site5.png?v=2024" alt="Site 5" className="w-full h-full object-cover" />
-              </div>
-              {/* Quatrième set d'images */}
-              <div className="w-80 h-60 mr-4 rounded-lg overflow-hidden shadow-lg flex-shrink-0">
-                <img src="/site1.png?v=2024" alt="Site 1" className="w-full h-full object-cover" />
-              </div>
-              <div className="w-80 h-60 mr-4 rounded-lg overflow-hidden shadow-lg flex-shrink-0">
-                <img src="/site2.png?v=2024" alt="Site 2" className="w-full h-full object-cover" />
-              </div>
-              <div className="w-80 h-60 mr-4 rounded-lg overflow-hidden shadow-lg flex-shrink-0">
-                <img src="/site3.png?v=2024" alt="Site 3" className="w-full h-full object-cover" />
-              </div>
-              <div className="w-80 h-60 mr-4 rounded-lg overflow-hidden shadow-lg flex-shrink-0">
-                <img src="/site4.png?v=2024" alt="Site 4" className="w-full h-full object-cover" />
-              </div>
-              <div className="w-80 h-60 mr-4 rounded-lg overflow-hidden shadow-lg flex-shrink-0">
-                <img src="/site5.png?v=2024" alt="Site 5" className="w-full h-full object-cover" />
-              </div>
-            </div>
-          </div>
         </div>
       </main>
 
       {/* Section mobile uniquement - Photos défilantes verticales */}
-      <section className="md:hidden portrait:block landscape:hidden py-8 bg-white">
+      <section className="md:hidden py-8 bg-white">
         <div className="w-full overflow-hidden" style={{height: '1008px'}}>
           <div className="animate-slide-up-mobile flex flex-col">
             {/* Premier set d'images */}
