@@ -190,6 +190,106 @@ NEXT_PUBLIC_STUN_SERVERS=stun:stun.l.google.com:19302
 NEXT_PUBLIC_TURN_SERVERS=your_turn_server_if_needed
 ```
 
+## 🚨 HISTORIQUE DES MODIFICATIONS IMPORTANTES - SAUVEGARDE DE RÉCUPÉRATION
+
+### ⚠️ ÉTAT STABLE ACTUEL (Point de restauration)
+**Date:** Décembre 2024
+**Version:** Stable après modifications majeures de design et navigation
+
+### 📋 TOUTES LES MODIFICATIONS EFFECTUÉES (pour restauration si bugs)
+
+#### 1. **LAYOUT MOBILE - PHOTOS DÉFILANTES**
+- **Section mobile uniquement** : Photos défilantes verticales ajoutées
+- **Localisation** : `app/page.tsx` - Section `md:hidden py-8 bg-white`
+- **Hauteur** : 1008px pour afficher 4 photos simultanément
+- **Images** : 4 sets de 5 photos (site1.png à site5.png) pour scroll infini
+- **Animation** : CSS `animate-slide-up-mobile` à 180 secondes
+
+#### 2. **NAVIGATION ET REDIRECTIONS**
+- **Bouton "Commencer maintenant"** : Redirige vers formulaire de contact (#contact)
+- **Tous les boutons de prix** : 
+  - "Démarrer mon projet" (Starter)
+  - "Accélérer ma croissance" (Pro) 
+  - "Dominer mon marché" (Premium)
+- **Boutons "Contact"** : Menu desktop et mobile
+- **Méthode** : `document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })`
+
+#### 3. **FORMULAIRE DE CONTACT**
+- **ID ajouté** : `<div id="contact">` pour les redirections
+- **Texte simplifié** : Suppression de la phrase sur "l'appel de découverte"
+- **Localisation** : Composant `ContactForm()` dans `app/page.tsx`
+
+#### 4. **ANIMATIONS ET EFFETS**
+- **Hover effects** : `hover:shadow-black-glow` sur cartes prix et formulaire
+- **CSS ajouté** : Animation pulsante avec ombres noires dans `app/globals.css`
+- **Transitions** : Durée 300ms pour tous les effets
+
+#### 5. **RESPONSIVITÉ MOBILE**
+- **Images desktop** : `hidden md:flex` pour masquer sur mobile
+- **Largeur principale** : `w-full md:w-2/3` pour pleine largeur mobile
+- **Chat mobile** : Header et input fixés, messages scrollables
+- **Sidebar chat** : Toggle repositionné à gauche
+
+#### 6. **FICHIERS MODIFIÉS**
+- `app/page.tsx` : Layout principal, redirections, formulaire
+- `app/globals.css` : Animations et effets hover
+- `app/chat/page.tsx` : Interface chat mobile
+
+### 🔧 COMMENT RESTAURER EN CAS DE BUG
+
+#### Étape 1 - Vérifier les redirections
+```javascript
+// Vérifier que tous les boutons ont cette fonction :
+onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+```
+
+#### Étape 2 - Vérifier l'ID du formulaire
+```html
+<!-- S'assurer que le formulaire a cet ID : -->
+<div id="contact">
+  <ContactForm />
+</div>
+```
+
+#### Étape 3 - Vérifier la section mobile
+```javascript
+// Section mobile doit avoir cette hauteur :
+<div className="w-full overflow-hidden" style={{height: '1008px'}}>
+```
+
+#### Étape 4 - Vérifier les classes CSS
+```css
+/* Dans globals.css, vérifier présence de : */
+.hover\:shadow-black-glow:hover {
+  animation: black-glow-pulse 2s infinite !important;
+}
+
+@keyframes black-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3) !important;
+    transform: scale(1.1) !important;
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.6) !important;
+    transform: scale(1.15) !important;
+  }
+}
+```
+
+### 🎯 FONCTIONNALITÉS VALIDÉES
+- ✅ 4 photos visibles simultanément sur mobile
+- ✅ Tous les boutons redirigent vers le formulaire
+- ✅ Animations hover sur cartes et formulaire
+- ✅ Menu mobile fonctionnel
+- ✅ Chat mobile avec header/input fixes
+- ✅ Scroll fluide vers formulaire de contact
+
+### 💾 DERNIÈRE SAUVEGARDE GITHUB
+**Commit:** "Fix mobile layout and add contact form redirects"
+**Hash:** 1a9adce
+
+---
+
 ## Fonctionnalités Complètes
 
 ### Interface de Chat
