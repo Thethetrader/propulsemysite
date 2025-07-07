@@ -21,6 +21,8 @@ export default function AdminPage() {
   // Liste dynamique récupérée de Supabase
   const [clients, setClients] = useState<any[]>([])
 
+  const [editingClient, setEditingClient] = useState<any | null>(null)
+
   useEffect(() => {
     async function fetchClients() {
       if (!supabase) return
@@ -50,6 +52,31 @@ export default function AdminPage() {
     alert(`Client créé !\n\nEmail: ${clientForm.email}\nMot de passe: ${clientForm.password}\n\n(Envoyer ces identifiants au client)`)
     setShowAddClient(false)
     setClientForm({ name: '', email: '', projectName: '', projectDescription: '', password: '' })
+  }
+
+  const openEdit = (client: any) => {
+    setClientForm({
+      name: client.name,
+      email: client.email,
+      projectName: '',
+      projectDescription: '',
+      password: ''
+    })
+    setEditingClient(client)
+  }
+
+  async function handleUpdateClient() {
+    if (!supabase || !editingClient) return
+    const { error } = await supabase
+      .from('clients')
+      .update({ name: clientForm.name, email: clientForm.email })
+      .eq('id', editingClient.id)
+    if (!error) {
+      setClients(prev => prev.map(c => c.id === editingClient.id ? { ...c, name: clientForm.name, email: clientForm.email } : c))
+      setEditingClient(null)
+    } else {
+      alert('Erreur mise à jour')
+    }
   }
 
   const projects = [
@@ -162,7 +189,7 @@ export default function AdminPage() {
                         <div className="text-sm text-gray-900">{client.created_at}</div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                        <button className="text-black hover:underline mr-4">Éditer</button>
+                        <button onClick={() => openEdit(client)} className="text-black hover:underline mr-4">Éditer</button>
                         <button onClick={() => deleteClient(client.id)} className="text-red-600 hover:underline">Supprimer</button>
                       </td>
                     </tr>
@@ -352,6 +379,56 @@ export default function AdminPage() {
                 <li>• Les salons Discord seront créés automatiquement</li>
                 <li>• Le client pourra se connecter sur /login</li>
               </ul>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Modal Éditer Client */}
+      {editingClient && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-6 w-full max-w-md mx-4">
+            <h3 className="text-lg font-semibold text-black mb-4">Modifier le client</h3>
+
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Nom
+                </label>
+                <input
+                  type="text"
+                  value={clientForm.name}
+                  onChange={(e) => setClientForm(prev => ({ ...prev, name: e.target.value }))}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-black focus:border-black"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  value={clientForm.email}
+                  onChange={(e) => setClientForm(prev => ({ ...prev, email: e.target.value }))}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-black focus:border-black"
+                />
+              </div>
+            </div>
+
+            <div className="mt-6 flex justify-end space-x-3">
+              <button
+                onClick={() => setEditingClient(null)}
+                className="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100"
+              >
+                Annuler
+              </button>
+              <button
+                onClick={handleUpdateClient}
+                className="px-4 py-2 rounded-lg bg-black text-white hover:bg-gray-800"
+              >
+                Sauver
+              </button>
             </div>
           </div>
         </div>
