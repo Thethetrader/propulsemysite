@@ -101,8 +101,33 @@ export default function Home() {
               Passez de l'idée à l'impact.
             </h1>
             <p className="text-base md:text-xl text-gray-600 mb-12 max-w-xl mx-auto leading-relaxed">
-              Transformez votre vision en réalité digitale. Des sites web modernes, rapides et optimisés pour votre succès.
+              Transformez votre vision en réalité digitale grâce à une création sur-mesure, conçue dans un vrai esprit de proximité. Des sites web modernes, rapides et optimisés pour votre succès.
             </p>
+
+            {/* Avantages clés */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-8">
+              <div className="bg-gray-50 rounded-2xl p-4 md:p-6 text-center shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105">
+                <div className="text-3xl md:text-4xl mb-2 select-none" role="img" aria-label="Palette">🎨</div>
+                <h3 className="text-sm md:text-base font-semibold mb-1">Créez votre image de marque</h3>
+                <p className="text-xs md:text-sm text-gray-600">Identité forte et cohérente</p>
+              </div>
+              <div className="bg-gray-50 rounded-2xl p-4 md:p-6 text-center shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105">
+                <div className="text-3xl md:text-4xl mb-2 select-none" role="img" aria-label="Licorne">🦄</div>
+                <h3 className="text-sm md:text-base font-semibold mb-1">Démarquez-vous</h3>
+                <p className="text-xs md:text-sm text-gray-600">Mettez votre singularité en avant</p>
+              </div>
+              <div className="bg-gray-50 rounded-2xl p-4 md:p-6 text-center shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105">
+                <div className="text-3xl md:text-4xl mb-2 select-none" role="img" aria-label="Poignée de main">🤝</div>
+                <h3 className="text-sm md:text-base font-semibold mb-1">Fidélisez l'audience</h3>
+                <p className="text-xs md:text-sm text-gray-600">Lien durable avec vos clients</p>
+              </div>
+              <div className="bg-gray-50 rounded-2xl p-4 md:p-6 text-center shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105">
+                <div className="text-3xl md:text-4xl mb-2 select-none" role="img" aria-label="Graphique">📈</div>
+                <h3 className="text-sm md:text-base font-semibold mb-1">Rétention utilisateur</h3>
+                <p className="text-xs md:text-sm text-gray-600">Expérience engageante</p>
+              </div>
+            </div>
+
             <button className="bg-black text-white px-10 py-4 rounded-full text-lg font-medium hover:bg-gray-800 transition-all duration-300 transform hover:scale-105"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
               Commencer maintenant
@@ -183,7 +208,6 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* Section Prix */}
       <section id="prix" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-8">
@@ -207,9 +231,17 @@ export default function Home() {
               </div>
               <ul className="text-left space-y-3 landscape:space-y-2 text-gray-600 flex-grow mb-8 landscape:mb-4">
                 <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Site vitrine professionnel</strong><br/><span className="text-sm text-gray-500">5 pages optimisées</span></span></li>
-                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Design responsive premium</strong><br/><span className="text-sm text-gray-500">Adapté mobile et desktop</span></span></li>
-                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Hébergement sécurisé inclus</strong><br/><span className="text-sm text-gray-500">12 mois + domaine offert</span></span></li>
-                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Support technique</strong><br/><span className="text-sm text-gray-500">Assistance email sous 24h</span></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Design responsive premium</strong><br/><span className="text-sm text-gray-500">Adapté mobile & desktop</span></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Hébergement sécurisé</strong><br/><span className="text-sm text-gray-500">12 mois + domaine offert</span></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Support technique</strong><br/><span className="text-sm text-gray-500">Assistance 24 h</span></span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-2">✕</span><span><strong>Blog</strong></span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-2">✕</span><span><strong>Module e-commerce</strong></span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-2">✕</span><span><strong>Optimisation SEO</strong></span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-2">✕</span><span><strong>Design sur mesure</strong></span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-2">✕</span><span><strong>Espace client Discord</strong></span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-2">✕</span><span><strong>Support prioritaire</strong></span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-2">✕</span><span><strong>Pages illimitées</strong></span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-2">✕</span><span><strong>Accompagnement VIP</strong></span></li>
               </ul>
               <button className="bg-black text-white px-6 py-3 rounded-full text-base font-medium hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 mt-auto">Démarrer mon projet</button>
             </div>
@@ -224,11 +256,18 @@ export default function Home() {
                 <div className="text-4xl landscape:text-2xl font-bold text-gray-800">1299€</div>
               </div>
               <ul className="text-left space-y-3 landscape:space-y-2 text-gray-600 flex-grow mb-8 landscape:mb-4">
-                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Site web professionnel</strong><br/><span className="text-sm text-gray-500">Jusqu'à 10 pages + blog</span></span></li>
-                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Design sur mesure</strong><br/><span className="text-sm text-gray-500">Identité visuelle personnalisée</span></span></li>
-                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Espace client Discord</strong><br/><span className="text-sm text-gray-500">Suivi projet temps réel</span></span></li>
-                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Module e-commerce</strong><br/><span className="text-sm text-gray-500">Boutique en ligne + paiements</span></span></li>
-                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Optimisation SEO</strong><br/><span className="text-sm text-gray-500">Référencement Google</span></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Hébergement + domaine</strong><br/><span className="text-sm text-gray-500">12 mois inclus</span></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Jusqu'à 10 pages + blog</strong></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Responsive mobile/tablette</strong></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Formulaire de contact avancé</strong></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Blog & articles</strong></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Design personnalisé</strong><br/><span className="text-sm text-gray-500">Identité visuelle</span></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Module e-commerce</strong><br/><span className="text-sm text-gray-500">Paiements en ligne</span></span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-2">✕</span><span><strong>Gestion de stock + analytics</strong></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>SEO</strong><br/><span className="text-sm text-gray-500">Référencement Google</span></span></li>
+                <li className="flex items-start"><span className="text-red-500 mr-2">✕</span><span><strong>SEO IA</strong><br/><span className="text-sm text-gray-500">Optimisation LLM + audit</span></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Support email 24h</strong></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Espace client + support prioritaire</strong></span></li>
               </ul>
               <button className="bg-black text-white px-6 py-3 rounded-full text-base font-medium hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 mt-auto">Accélérer ma croissance</button>
             </div>
@@ -240,11 +279,18 @@ export default function Home() {
                 <div className="text-4xl landscape:text-2xl font-bold text-gray-800">1999€</div>
               </div>
               <ul className="text-left space-y-3 landscape:space-y-2 text-gray-600 flex-grow mb-8 landscape:mb-4">
-                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Plateforme web illimitée</strong><br/><span className="text-sm text-gray-500">Pages illimitées + architecture</span></span></li>
-                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Design 100% unique</strong><br/><span className="text-sm text-gray-500">Identité visuelle complète</span></span></li>
-                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>E-commerce avancé</strong><br/><span className="text-sm text-gray-500">Gestion stocks + analytics</span></span></li>
-                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>SEO professionnel</strong><br/><span className="text-sm text-gray-500">Audit SEO + stratégie</span></span></li>
-                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Accompagnement VIP</strong><br/><span className="text-sm text-gray-500">Chef projet + formations</span></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Hébergement + domaine</strong><br/><span className="text-sm text-gray-500">12 mois inclus</span></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Pages illimitées + blog</strong></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Responsive mobile/tablette</strong></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Formulaire avancé + espace membres</strong></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Blog & articles</strong></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Design 100 % unique</strong><br/><span className="text-sm text-gray-500">UX + branding complet</span></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Module e-commerce</strong><br/><span className="text-sm text-gray-500">Paiements en ligne</span></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Gestion de stock + analytics</strong></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>SEO</strong><br/><span className="text-sm text-gray-500">Référencement Google</span></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>SEO IA</strong><br/><span className="text-sm text-gray-500">Optimisation LLM + audit</span></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Support email 24h</strong></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Espace client + support prioritaire</strong></span></li>
               </ul>
               <button className="bg-black text-white px-6 py-3 rounded-full text-base font-medium hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 mt-auto">Dominer mon marché</button>
             </div>
@@ -280,15 +326,14 @@ export default function Home() {
                 ))}
               </div>
               <p className="text-gray-700 mb-4 italic">
-                "Service exceptionnel ! Mon site e-commerce a été livré en temps record et dépasse toutes mes attentes. Le design est magnifique et les ventes ont explosé dès le premier mois."
+                "Super rendu ! Le site de Canal Poké reflète parfaitement l'esprit du resto."
               </p>
               <div className="flex items-center">
                 <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">
                   M
                 </div>
                 <div>
-                  <p className="font-semibold text-black">Marie Dubois</p>
-                  <p className="text-gray-500 text-sm">Boutique en ligne - Mode</p>
+                  <p className="font-semibold text-black">Mathieu R.</p>
                 </div>
               </div>
             </div>
@@ -303,15 +348,14 @@ export default function Home() {
                 ))}
               </div>
               <p className="text-gray-700 mb-4 italic">
-                "Une équipe incroyable ! Ils ont su comprendre ma vision et créer un site qui reflète parfaitement mon entreprise. L'accompagnement Discord est un vrai plus."
+                "Simple, pro et impactant. Le site donne vraiment envie de découvrir Putain de Malédiction."
               </p>
               <div className="flex items-center">
                 <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">
-                  J
+                  T
                 </div>
                 <div>
-                  <p className="font-semibold text-black">Julien Martin</p>
-                  <p className="text-gray-500 text-sm">Consultant en marketing</p>
+                  <p className="font-semibold text-black">Tonton</p>
                 </div>
               </div>
             </div>
@@ -326,15 +370,14 @@ export default function Home() {
                 ))}
               </div>
               <p className="text-gray-700 mb-4 italic">
-                "Résultat au-delà de mes espérances ! Site rapide, design moderne et SEO optimisé. Je recommande vivement, c'est du travail de professionnel."
+                "Très satisfait du résultat. Le site est clair, dynamique et inspire confiance."
               </p>
               <div className="flex items-center">
                 <div className="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">
-                  S
+                  T
                 </div>
                 <div>
-                  <p className="font-semibold text-black">Sophie Leroy</p>
-                  <p className="text-gray-500 text-sm">Architecte d'intérieur</p>
+                  <p className="font-semibold text-black">Thomas G.</p>
                 </div>
               </div>
             </div>
