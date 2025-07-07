@@ -277,7 +277,7 @@ export default function ChatPage() {
         </div>
 
         {/* Zone de chat principale */}
-        <div className="flex-1 flex flex-col md:flex-col">
+        <div className={`flex-1 flex flex-col md:flex-col transform transition-transform duration-300 md:translate-x-0 ${sidebarOpen ? '-translate-x-full md:translate-x-0' : 'translate-x-0'}`}>
           {/* Header channel */}
           <div className="h-12 bg-white border-b border-gray-200 flex items-center px-4 shadow-sm fixed md:static top-0 left-0 right-0 z-10">
             <div className="flex items-center w-full">

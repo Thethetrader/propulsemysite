@@ -248,7 +248,7 @@ export default function Home() {
             {/* Formule Pro */}
             <div className="bg-white rounded-2xl p-8 landscape:p-4 shadow-xl border-2 border-black relative flex flex-col h-full hover:shadow-black-glow transition-all duration-300 transform hover:scale-105">
               <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                <div className="bg-black text-white text-sm landscape:text-xs px-4 py-1 rounded-full">🔥 Recommandé</div>
+                <div className="bg-black text-white text-sm landscape:text-xs px-4 py-1 rounded-full flex items-center gap-1 whitespace-nowrap">🔥 <span>Recommandé</span></div>
               </div>
               <div className="text-center mb-6 landscape:mb-3 mt-4 landscape:mt-2">
                 <h3 className="text-2xl landscape:text-xl font-semibold text-black mb-2 landscape:mb-1">Pro</h3>
