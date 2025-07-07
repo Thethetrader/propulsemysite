@@ -415,7 +415,7 @@ export default function Home() {
           <div>
             <h3 className="font-semibold mb-3">Légal</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:underline">Politique de confidentialité</a></li>
+              <li><a href="/confidentialite" className="hover:underline">Politique de confidentialité</a></li>
               <li><a href="#" className="hover:underline">Mentions légales</a></li>
             </ul>
           </div>
