@@ -231,7 +231,7 @@ export default function ChatPage() {
         <div className={`w-64 bg-white flex flex-col border-r border-gray-100 transition-transform duration-300 md:translate-x-0 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} fixed md:static z-20 h-full md:h-auto md:flex`}>
           {/* Header serveur */}
           <div className="h-16 bg-gradient-to-r from-gray-50 to-white border-b border-gray-100 flex items-center justify-between px-6 shadow-sm">
-            <h1 className="font-medium text-gray-800">Site Web Restaurant "Le Jardin"</h1>
+            <h1 className="font-medium text-gray-800">Projet "{clientName || 'Nouveau projet'}"</h1>
             <button 
               onClick={() => {
                 // Rediriger vers la landing page
