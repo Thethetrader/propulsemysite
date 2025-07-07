@@ -21,6 +21,9 @@ export default function AdminPage() {
   // Liste dynamique récupérée de Supabase
   const [clients, setClients] = useState<any[]>([])
 
+  // Projets depuis Supabase
+  const [projects, setProjects] = useState<any[]>([])
+
   const [editingClient, setEditingClient] = useState<any | null>(null)
 
   useEffect(() => {
@@ -35,6 +38,20 @@ export default function AdminPage() {
       }
     }
     fetchClients()
+  }, [])
+
+  useEffect(() => {
+    async function fetchProjects() {
+      if (!supabase) return
+      const { data, error } = await supabase
+        .from('projects_with_client')
+        .select('id, name, client_name, status, created_at')
+        .order('created_at', { ascending: false })
+      if (!error && data) {
+        setProjects(data as any[])
+      }
+    }
+    fetchProjects()
   }, [])
 
   const generatePassword = () => {
@@ -78,11 +95,6 @@ export default function AdminPage() {
       alert('Erreur mise à jour')
     }
   }
-
-  const projects = [
-    { id: '1', name: 'Site E-commerce', client_name: 'Marie Dupont', status: 'En cours', created_at: '2024-01-16' },
-    { id: '2', name: 'Blog Personnel', client_name: 'Pierre Martin', status: 'Terminé', created_at: '2024-01-21' },
-  ]
 
   async function deleteClient(id: string) {
     if (!supabase) return
