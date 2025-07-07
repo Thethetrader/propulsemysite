@@ -45,6 +45,12 @@ body {
   animation: slide-up-mobile 180s linear infinite;
 }
 
+@media (orientation: landscape) {
+  .animate-slide-up-mobile {
+    animation-duration: 180s !important;
+  }
+}
+
 /* Effet de lumière au survol */
 .shadow-glow {
   box-shadow: 
