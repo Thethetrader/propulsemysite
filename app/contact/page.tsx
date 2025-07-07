@@ -10,7 +10,7 @@ export default function ContactPage() {
     e.preventDefault();
     const subject = encodeURIComponent('Demande de contact depuis Propulsemysite');
     const body = encodeURIComponent(`Nom: ${name}\nEmail: ${email}\n\n${message}`);
-    window.location.href = `mailto:contact@propulsemysite.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:brey.theodore4@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (

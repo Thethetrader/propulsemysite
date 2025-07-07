@@ -392,7 +392,7 @@ export default function Home() {
             <h2 className="font-bold text-lg mb-2">Propulsemysite</h2>
             <p className="text-sm mb-4">Boostez votre présence en ligne. Création de sites web modernes, accompagnement et conseils personnalisés.</p>
             <div className="flex space-x-3">
-              <a href="mailto:contact@propulsemysite.com" className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 transition"><span aria-label="email" role="img">✉️</span></a>
+              <a href="mailto:brey.theodore4@gmail.com" className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 transition"><span aria-label="email" role="img">✉️</span></a>
               <a href="https://www.propulsemysite.com" target="_blank" rel="noopener noreferrer" className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 transition"><span aria-label="site" role="img">🌐</span></a>
             </div>
           </div>
@@ -438,7 +438,7 @@ function ContactForm() {
     e.preventDefault();
     const subject = encodeURIComponent('Demande de contact depuis Propulsemysite');
     const body = encodeURIComponent(`Nom complet: ${name}\nEmail: ${email}\nNom du projet: ${projectName}\nNuméro de téléphone: ${phoneNumber}\n\nDescription du projet:\n${projectDescription}`);
-    window.location.href = `mailto:contact@propulsemysite.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:brey.theodore4@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (
