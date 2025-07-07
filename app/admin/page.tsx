@@ -44,11 +44,19 @@ export default function AdminPage() {
     async function fetchProjects() {
       if (!supabase) return
       const { data, error } = await supabase
-        .from('projects_with_client')
-        .select('id, name, client_name, status, created_at')
+        .from('projects')
+        .select('id, name, status, created_at, clients(name)')
         .order('created_at', { ascending: false })
       if (!error && data) {
-        setProjects(data as any[])
+        // transforme pour avoir client_name directement
+        const mapped = (data as any[]).map((p) => ({
+          id: p.id,
+          name: p.name,
+          status: p.status,
+          created_at: p.created_at,
+          client_name: p.clients?.name || '—'
+        }))
+        setProjects(mapped)
       }
     }
     fetchProjects()
