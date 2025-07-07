@@ -168,7 +168,7 @@ export const useWebRTC = ({ onCallReceived, onCallEnded }: UseWebRTCProps = {}) 
         // Remplacer le stream vidéo par le stream d'écran
         if (peer && localStream) {
           const videoTrack = screenStream.getVideoTracks()[0]
-          const sender = peer._pc.getSenders().find(
+          const sender = (peer as any)._pc.getSenders().find(
             (s: any) => s.track && s.track.kind === 'video'
           )
           if (sender) {
@@ -184,7 +184,7 @@ export const useWebRTC = ({ onCallReceived, onCallEnded }: UseWebRTCProps = {}) 
           // Remettre la caméra
           if (peer && localStream) {
             const videoTrack = localStream.getVideoTracks()[0]
-            const sender = peer._pc.getSenders().find(
+            const sender = (peer as any)._pc.getSenders().find(
               (s: any) => s.track && s.track.kind === 'video'
             )
             if (sender) {
@@ -196,7 +196,7 @@ export const useWebRTC = ({ onCallReceived, onCallEnded }: UseWebRTCProps = {}) 
         // Arrêter le partage d'écran et remettre la caméra
         if (peer && localStream) {
           const videoTrack = localStream.getVideoTracks()[0]
-          const sender = peer._pc.getSenders().find(
+          const sender = (peer as any)._pc.getSenders().find(
             (s: any) => s.track && s.track.kind === 'video'
           )
           if (sender) {
