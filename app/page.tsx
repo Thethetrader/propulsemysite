@@ -28,7 +28,7 @@ export default function Home() {
               <a href="#contact" className="text-gray-600 hover:text-black transition" onClick={() => {
                 document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
               }}>Contact</a>
-              <a href="/chat" className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition">
+              <a href="/login" className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition">
                 Connexion
               </a>
             </nav>
@@ -51,7 +51,7 @@ export default function Home() {
                 document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
               }, 100);
             }}>Contact</a>
-            <a href="/chat" className="bg-black text-white px-6 py-2 rounded-full text-center font-medium hover:bg-gray-800 transition" onClick={() => setMenuOpen(false)}>Connexion</a>
+            <a href="/login" className="bg-black text-white px-6 py-2 rounded-full text-center font-medium hover:bg-gray-800 transition" onClick={() => setMenuOpen(false)}>Connexion</a>
           </div>
         </div>
       )}
