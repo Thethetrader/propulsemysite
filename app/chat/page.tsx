@@ -1,7 +1,8 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useWebRTC } from '../../lib/useWebRTC'
+import { supabase } from '../../lib/supabase'
 
 interface Message {
   id: number
@@ -21,6 +22,7 @@ export default function ChatPage() {
   const [sidebarOpen, setSidebarOpen] = useState(true)
   const [showFileUpload, setShowFileUpload] = useState(false)
   const [messagesMap, setMessagesMap] = useState<{[key: string]: Message[]}>({})
+  const [clientName, setClientName] = useState<string>('Client')
 
   // WebRTC hook
   const {
@@ -114,6 +116,21 @@ export default function ChatPage() {
     }
   }, [selectedChannel, defaultMessages, messagesMap])
 
+  // Fetch client name once
+  useEffect(() => {
+    async function fetchClient() {
+      const { data, error } = await supabase
+        .from('clients')
+        .select('name')
+        .limit(1)
+        .maybeSingle()
+      if (!error && data?.name) {
+        setClientName(data.name as string)
+      }
+    }
+    fetchClient()
+  }, [])
+
   const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(event.target.files || [])
     setSelectedFiles(prev => [...prev, ...files])
@@ -177,7 +194,7 @@ export default function ChatPage() {
 
     const newMessage: Message = {
       id: Date.now(),
-      author: 'Client',
+      author: clientName,
       content: message.trim(),
       time: new Date().toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' }),
       isWelcome: false
@@ -276,14 +293,14 @@ export default function ChatPage() {
                   <span className="text-white text-sm font-medium">C</span>
                 </div>
                 <div className="flex-1">
-                  <div className="text-sm font-medium text-gray-800">Client</div>
+                  <div className="text-sm font-medium text-gray-800">{clientName}</div>
                   <div className="text-xs text-gray-500 flex items-center">
                     <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
                     Membre
                   </div>
                 </div>
                 <button
-                  onClick={() => startCall('Client')}
+                  onClick={() => startCall(clientName)}
                   className="p-2 rounded-lg hover:bg-gray-100 transition-colors text-gray-500 hover:text-gray-700"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -457,14 +474,14 @@ export default function ChatPage() {
                     <span className="text-white text-sm font-medium">C</span>
                   </div>
                   <div className="flex-1">
-                    <div className="text-sm font-medium text-gray-800">Client</div>
+                    <div className="text-sm font-medium text-gray-800">{clientName}</div>
                     <div className="text-xs text-gray-500 flex items-center">
                       <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
                       Membre
                     </div>
                   </div>
                   <button
-                    onClick={() => startCall('Client')}
+                    onClick={() => startCall(clientName)}
                     className="p-2 rounded-lg hover:bg-gray-100 transition-colors text-gray-500 hover:text-gray-700"
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
