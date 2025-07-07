@@ -114,67 +114,67 @@ export default function Home() {
           <div className="animate-slide-up-mobile flex flex-col">
             {/* Premier set d'images */}
             <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site1.png" alt="Site 1" className="w-full h-full object-cover" />
+              <img src="/site1.png?v=2024" alt="Site 1" className="w-full h-full object-cover" />
             </div>
             <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site2.png" alt="Site 2" className="w-full h-full object-cover" />
+              <img src="/site2.png?v=2024" alt="Site 2" className="w-full h-full object-cover" />
             </div>
             <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site3.png" alt="Site 3" className="w-full h-full object-cover" />
+              <img src="/site3.png?v=2024" alt="Site 3" className="w-full h-full object-cover" />
             </div>
             <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site4.png" alt="Site 4" className="w-full h-full object-cover" />
+              <img src="/site4.png?v=2024" alt="Site 4" className="w-full h-full object-cover" />
             </div>
             <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site5.png" alt="Site 5" className="w-full h-full object-cover" />
+              <img src="/site5.png?v=2024" alt="Site 5" className="w-full h-full object-cover" />
             </div>
             {/* Deuxième set d'images */}
             <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site1.png" alt="Site 1" className="w-full h-full object-cover" />
+              <img src="/site1.png?v=2024" alt="Site 1" className="w-full h-full object-cover" />
             </div>
             <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site2.png" alt="Site 2" className="w-full h-full object-cover" />
+              <img src="/site2.png?v=2024" alt="Site 2" className="w-full h-full object-cover" />
             </div>
             <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site3.png" alt="Site 3" className="w-full h-full object-cover" />
+              <img src="/site3.png?v=2024" alt="Site 3" className="w-full h-full object-cover" />
             </div>
             <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site4.png" alt="Site 4" className="w-full h-full object-cover" />
+              <img src="/site4.png?v=2024" alt="Site 4" className="w-full h-full object-cover" />
             </div>
             <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site5.png" alt="Site 5" className="w-full h-full object-cover" />
+              <img src="/site5.png?v=2024" alt="Site 5" className="w-full h-full object-cover" />
             </div>
             {/* Troisième set d'images */}
             <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site1.png" alt="Site 1" className="w-full h-full object-cover" />
+              <img src="/site1.png?v=2024" alt="Site 1" className="w-full h-full object-cover" />
             </div>
             <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site2.png" alt="Site 2" className="w-full h-full object-cover" />
+              <img src="/site2.png?v=2024" alt="Site 2" className="w-full h-full object-cover" />
             </div>
             <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site3.png" alt="Site 3" className="w-full h-full object-cover" />
+              <img src="/site3.png?v=2024" alt="Site 3" className="w-full h-full object-cover" />
             </div>
             <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site4.png" alt="Site 4" className="w-full h-full object-cover" />
+              <img src="/site4.png?v=2024" alt="Site 4" className="w-full h-full object-cover" />
             </div>
             <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site5.png" alt="Site 5" className="w-full h-full object-cover" />
+              <img src="/site5.png?v=2024" alt="Site 5" className="w-full h-full object-cover" />
             </div>
             {/* Quatrième set d'images */}
             <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site1.png" alt="Site 1" className="w-full h-full object-cover" />
+              <img src="/site1.png?v=2024" alt="Site 1" className="w-full h-full object-cover" />
             </div>
             <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site2.png" alt="Site 2" className="w-full h-full object-cover" />
+              <img src="/site2.png?v=2024" alt="Site 2" className="w-full h-full object-cover" />
             </div>
             <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site3.png" alt="Site 3" className="w-full h-full object-cover" />
+              <img src="/site3.png?v=2024" alt="Site 3" className="w-full h-full object-cover" />
             </div>
             <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site4.png" alt="Site 4" className="w-full h-full object-cover" />
+              <img src="/site4.png?v=2024" alt="Site 4" className="w-full h-full object-cover" />
             </div>
             <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site5.png" alt="Site 5" className="w-full h-full object-cover" />
+              <img src="/site5.png?v=2024" alt="Site 5" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
