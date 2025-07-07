@@ -279,7 +279,7 @@ export default function ChatPage() {
         {/* Zone de chat principale */}
         <div className="flex-1 flex flex-col md:flex-col">
           {/* Header channel */}
-          <div className="h-12 bg-white border-b border-gray-200 flex items-center px-4 shadow-sm relative md:relative fixed md:static top-0 left-0 right-0 z-10">
+          <div className="h-12 bg-white border-b border-gray-200 flex items-center px-4 shadow-sm fixed md:static top-0 left-0 right-0 z-10">
             <div className="flex items-center w-full">
               {!sidebarOpen && (
                 <button className="mr-3 md:hidden bg-white rounded-full shadow p-2" onClick={() => setSidebarOpen(true)}>

@@ -22,7 +22,9 @@ export default function Home() {
             <nav className="hidden md:flex items-center space-x-8">
               <a href="#services" className="text-gray-600 hover:text-black transition">Services</a>
               <a href="#prix" className="text-gray-600 hover:text-black transition">Prix</a>
-              <a href="#contact" className="text-gray-600 hover:text-black transition">Contact</a>
+              <a href="#contact" className="text-gray-600 hover:text-black transition" onClick={() => {
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+              }}>Contact</a>
               <a href="/chat" className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition">
                 Connexion
               </a>
@@ -40,7 +42,12 @@ export default function Home() {
             </button>
             <a href="#services" className="text-lg font-medium text-gray-800" onClick={() => setMenuOpen(false)}>Services</a>
             <a href="#prix" className="text-lg font-medium text-gray-800" onClick={() => setMenuOpen(false)}>Prix</a>
-            <a href="#contact" className="text-lg font-medium text-gray-800" onClick={() => setMenuOpen(false)}>Contact</a>
+            <a href="#contact" className="text-lg font-medium text-gray-800" onClick={() => {
+              setMenuOpen(false);
+              setTimeout(() => {
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+              }, 100);
+            }}>Contact</a>
             <a href="/chat" className="bg-black text-white px-6 py-2 rounded-full text-center font-medium hover:bg-gray-800 transition" onClick={() => setMenuOpen(false)}>Connexion</a>
           </div>
         </div>
@@ -94,7 +101,7 @@ export default function Home() {
               Transformez votre vision en réalité digitale. Des sites web modernes, rapides et optimisés pour votre succès.
             </p>
             <button className="bg-black text-white px-10 py-4 rounded-full text-lg font-medium hover:bg-gray-800 transition-all duration-300 transform hover:scale-105"
-              onClick={() => window.location.href = '/contact'}>
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
               Commencer maintenant
             </button>
           </div>
@@ -103,7 +110,7 @@ export default function Home() {
 
       {/* Section mobile uniquement - Photos défilantes verticales */}
       <section className="md:hidden py-8 bg-white">
-        <div className="w-full overflow-hidden" style={{height: '752px'}}>
+        <div className="w-full overflow-hidden" style={{height: '1008px'}}>
           <div className="animate-slide-up-mobile flex flex-col">
             {/* Premier set d'images */}
             <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
@@ -221,7 +228,8 @@ export default function Home() {
                 </li>
               </ul>
               
-              <button className="w-full bg-black text-white py-3 rounded-full hover:bg-gray-800 transition font-medium">
+              <button className="w-full bg-black text-white py-3 rounded-full hover:bg-gray-800 transition font-medium"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
                 Démarrer mon projet
               </button>
             </div>
@@ -270,7 +278,8 @@ export default function Home() {
                 </li>
               </ul>
               
-              <button className="w-full bg-black text-white py-3 rounded-full hover:bg-gray-800 transition font-medium">
+              <button className="w-full bg-black text-white py-3 rounded-full hover:bg-gray-800 transition font-medium"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
                 Accélérer ma croissance
               </button>
             </div>
@@ -313,7 +322,8 @@ export default function Home() {
                 </li>
               </ul>
               
-              <button className="w-full bg-black text-white py-3 rounded-full hover:bg-gray-800 transition font-medium">
+              <button className="w-full bg-black text-white py-3 rounded-full hover:bg-gray-800 transition font-medium"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
                 Dominer mon marché
               </button>
             </div>
@@ -322,7 +332,9 @@ export default function Home() {
       </section>
 
       {/* Formulaire de contact (sous la landing page, avant le footer) */}
-      <ContactForm />
+      <div id="contact">
+        <ContactForm />
+      </div>
 
       {/* Footer */}
       <footer className="bg-white border-t border-gray-100 mt-16">
@@ -385,9 +397,7 @@ function ContactForm() {
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold mb-4 text-black">Contact / Réserver un appel</h2>
           <p className="text-gray-600 leading-relaxed">
-            Pour nous contacter, veuillez remplir le formulaire ci-dessous. L'étape finale 
-            consiste à <strong>réserver votre appel de découverte gratuit</strong> directement sur l'écran 
-            suivant.
+            Pour nous contacter, veuillez remplir le formulaire ci-dessous.
           </p>
         </div>
 
