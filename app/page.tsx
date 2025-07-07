@@ -192,107 +192,61 @@ export default function Home() {
               Nos solutions digitales
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Des packages complets adaptés à votre ambition entrepreneuriale. 
-              Développement professionnel, accompagnement personnalisé et résultats garantis.
+              Des packages complets adaptés à votre ambition entrepreneuriale. Développement professionnel, accompagnement personnalisé et résultats garantis.
             </p>
           </div>
-          
           <div className="grid md:grid-cols-3 gap-8 items-stretch landscape:grid-cols-3 landscape:gap-4">
             {/* Formule Starter */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 flex flex-col h-full landscape:p-4">
+            <div className="bg-white rounded-2xl p-8 landscape:p-4 shadow-lg hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 flex flex-col h-full">
               <div className="text-center mb-6 landscape:mb-3">
-                <h3 className="text-2xl font-semibold text-black mb-2 landscape:text-xl landscape:mb-1">Starter</h3>
-                <p className="text-sm text-gray-500 mb-4 landscape:text-xs landscape:mb-2">Parfait pour débuter</p>
-                <div className="text-4xl font-bold text-gray-800 landscape:text-2xl">
+                <h3 className="text-2xl landscape:text-xl font-semibold text-black mb-2 landscape:mb-1">Starter</h3>
+                <p className="text-sm landscape:text-xs text-gray-500 mb-4 landscape:mb-2">Parfait pour débuter</p>
+                <div className="text-4xl landscape:text-2xl font-bold text-gray-800">
                   799€
                 </div>
               </div>
-              
-              <ul className="text-left space-y-3 text-gray-600 flex-grow mb-8 landscape:space-y-2 landscape:mb-4">
-                <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
-                  <span><strong>Site vitrine professionnel</strong><br/>
-                  <span className="text-sm text-gray-500">5 pages optimisées</span></span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
-                  <span><strong>Design responsive premium</strong><br/>
-                  <span className="text-sm text-gray-500">Adapté mobile et desktop</span></span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
-                  <span><strong>Hébergement sécurisé inclus</strong><br/>
-                  <span className="text-sm text-gray-500">1 an offert</span></span>
-                </li>
+              <ul className="text-left space-y-3 landscape:space-y-2 text-gray-600 flex-grow mb-8 landscape:mb-4">
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Site vitrine professionnel</strong><br/><span className="text-sm text-gray-500">5 pages optimisées</span></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Design responsive premium</strong><br/><span className="text-sm text-gray-500">Adapté mobile et desktop</span></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Hébergement sécurisé inclus</strong><br/><span className="text-sm text-gray-500">12 mois + domaine offert</span></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Support technique</strong><br/><span className="text-sm text-gray-500">Assistance email sous 24h</span></span></li>
               </ul>
-              <button className="bg-black text-white px-8 py-3 rounded-full text-base font-medium hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 landscape:px-4 landscape:py-2 landscape:text-sm">
-                Choisir Starter
-              </button>
+              <button className="bg-black text-white px-6 py-3 rounded-full text-base font-medium hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 mt-auto">Démarrer mon projet</button>
             </div>
             {/* Formule Pro */}
-            <div className="bg-white rounded-2xl p-8 shadow-xl border-2 border-black relative flex flex-col h-full hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 landscape:p-4">
+            <div className="bg-white rounded-2xl p-8 landscape:p-4 shadow-xl border-2 border-black relative flex flex-col h-full hover:shadow-black-glow transition-all duration-300 transform hover:scale-105">
               <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                <div className="bg-black text-white text-sm px-4 py-1 rounded-full landscape:text-xs landscape:px-2 landscape:py-0.5">
-                  🔥 Recommandé
-                </div>
+                <div className="bg-black text-white text-sm landscape:text-xs px-4 py-1 rounded-full">🔥 Recommandé</div>
               </div>
-              <div className="text-center mb-6 mt-4 landscape:mb-3 landscape:mt-2">
-                <h3 className="text-2xl font-semibold text-black mb-2 landscape:text-xl landscape:mb-1">Pro</h3>
-                <p className="text-sm text-gray-500 mb-4 landscape:text-xs landscape:mb-2">Pour entreprises ambitieuses</p>
-                <div className="text-4xl font-bold text-gray-800 landscape:text-2xl">
-                  1299€
-                </div>
+              <div className="text-center mb-6 landscape:mb-3 mt-4 landscape:mt-2">
+                <h3 className="text-2xl landscape:text-xl font-semibold text-black mb-2 landscape:mb-1">Pro</h3>
+                <p className="text-sm landscape:text-xs text-gray-500 mb-4 landscape:mb-2">Pour entreprises ambitieuses</p>
+                <div className="text-4xl landscape:text-2xl font-bold text-gray-800">1299€</div>
               </div>
-              <ul className="text-left space-y-3 text-gray-600 flex-grow mb-8 landscape:space-y-2 landscape:mb-4">
-                <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
-                  <span><strong>Site web professionnel</strong><br/>
-                  <span className="text-sm text-gray-500">Jusqu'à 10 pages + blog</span></span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
-                  <span><strong>Design sur mesure</strong><br/>
-                  <span className="text-sm text-gray-500">Identité visuelle personnalisée</span></span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
-                  <span><strong>Espace client Discord</strong><br/>
-                  <span className="text-sm text-gray-500">Support & communauté</span></span>
-                </li>
+              <ul className="text-left space-y-3 landscape:space-y-2 text-gray-600 flex-grow mb-8 landscape:mb-4">
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Site web professionnel</strong><br/><span className="text-sm text-gray-500">Jusqu'à 10 pages + blog</span></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Design sur mesure</strong><br/><span className="text-sm text-gray-500">Identité visuelle personnalisée</span></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Espace client Discord</strong><br/><span className="text-sm text-gray-500">Suivi projet temps réel</span></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Module e-commerce</strong><br/><span className="text-sm text-gray-500">Boutique en ligne + paiements</span></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Optimisation SEO</strong><br/><span className="text-sm text-gray-500">Référencement Google</span></span></li>
               </ul>
-              <button className="bg-black text-white px-8 py-3 rounded-full text-base font-medium hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 landscape:px-4 landscape:py-2 landscape:text-sm">
-                Choisir Pro
-              </button>
+              <button className="bg-black text-white px-6 py-3 rounded-full text-base font-medium hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 mt-auto">Accélérer ma croissance</button>
             </div>
             {/* Formule Premium */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 flex flex-col h-full landscape:p-4">
+            <div className="bg-white rounded-2xl p-8 landscape:p-4 shadow-lg hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 flex flex-col h-full">
               <div className="text-center mb-6 landscape:mb-3">
-                <h3 className="text-2xl font-semibold text-black mb-2 landscape:text-xl landscape:mb-1">Premium</h3>
-                <p className="text-sm text-gray-500 mb-4 landscape:text-xs landscape:mb-2">Solution complète sur mesure</p>
-                <div className="text-4xl font-bold text-gray-800 landscape:text-2xl">
-                  1999€
-                </div>
+                <h3 className="text-2xl landscape:text-xl font-semibold text-black mb-2 landscape:mb-1">Premium</h3>
+                <p className="text-sm landscape:text-xs text-gray-500 mb-4 landscape:mb-2">Solution complète sur mesure</p>
+                <div className="text-4xl landscape:text-2xl font-bold text-gray-800">1999€</div>
               </div>
-              <ul className="text-left space-y-3 text-gray-600 flex-grow mb-8 landscape:space-y-2 landscape:mb-4">
-                <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
-                  <span><strong>Plateforme web illimitée</strong><br/>
-                  <span className="text-sm text-gray-500">Pages illimitées + architecture</span></span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
-                  <span><strong>Design 100% unique</strong><br/>
-                  <span className="text-sm text-gray-500">Identité visuelle complète</span></span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-500 mr-2">✓</span>
-                  <span><strong>E-commerce avancé</strong><br/>
-                  <span className="text-sm text-gray-500">Paiement, gestion, stats</span></span>
-                </li>
+              <ul className="text-left space-y-3 landscape:space-y-2 text-gray-600 flex-grow mb-8 landscape:mb-4">
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Plateforme web illimitée</strong><br/><span className="text-sm text-gray-500">Pages illimitées + architecture</span></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Design 100% unique</strong><br/><span className="text-sm text-gray-500">Identité visuelle complète</span></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>E-commerce avancé</strong><br/><span className="text-sm text-gray-500">Gestion stocks + analytics</span></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>SEO professionnel</strong><br/><span className="text-sm text-gray-500">Audit SEO + stratégie</span></span></li>
+                <li className="flex items-start"><span className="text-green-500 mr-2">✓</span><span><strong>Accompagnement VIP</strong><br/><span className="text-sm text-gray-500">Chef projet + formations</span></span></li>
               </ul>
-              <button className="bg-black text-white px-8 py-3 rounded-full text-base font-medium hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 landscape:px-4 landscape:py-2 landscape:text-sm">
-                Choisir Premium
-              </button>
+              <button className="bg-black text-white px-6 py-3 rounded-full text-base font-medium hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 mt-auto">Dominer mon marché</button>
             </div>
           </div>
         </div>
