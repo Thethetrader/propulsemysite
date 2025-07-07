@@ -113,6 +113,15 @@ export default function AdminPage() {
     setClients(prev => prev.filter(c => c.id !== id))
   }
 
+  // Supprimer projet
+  async function deleteProject(id: string) {
+    if (!supabase) return
+    const confirm = window.confirm('Supprimer ce projet ?')
+    if (!confirm) return
+    await supabase.from('projects').delete().eq('id', id)
+    setProjects(prev => prev.filter(p => p.id !== id))
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -280,7 +289,7 @@ export default function AdminPage() {
                           Accéder au chat
                         </Link>
                         <button className="text-black hover:underline mr-4">Éditer</button>
-                        <button className="text-red-600 hover:underline">Supprimer</button>
+                        <button onClick={() => deleteProject(project.id)} className="text-red-600 hover:underline">Supprimer</button>
                       </td>
                     </tr>
                   ))}
