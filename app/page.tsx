@@ -1,12 +1,98 @@
 "use client";
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import dynamic from "next/dynamic";
+// const GoldenBeam3D = dynamic(() => import("./GoldenBeam3D"), { ssr: false });
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showCookiePopup, setShowCookiePopup] = useState(false);
+  const [showServicePopup, setShowServicePopup] = useState(false);
+  const [selectedService, setSelectedService] = useState('');
+
+  useEffect(() => {
+    // Vérifier si l'utilisateur a déjà accepté les cookies
+    const cookiesAccepted = localStorage.getItem('cookiesAccepted');
+    if (!cookiesAccepted) {
+      setShowCookiePopup(true);
+    }
+  }, []);
+
+  const acceptCookies = () => {
+    localStorage.setItem('cookiesAccepted', 'true');
+    setShowCookiePopup(false);
+  };
+
+  const refuseCookies = () => {
+    localStorage.setItem('cookiesAccepted', 'false');
+    setShowCookiePopup(false);
+  };
+
+  const openServicePopup = (serviceName: string) => {
+    setSelectedService(serviceName);
+    setShowServicePopup(true);
+  };
+
+  const closeServicePopup = () => {
+    setShowServicePopup(false);
+    setSelectedService('');
+  };
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Service Popup */}
+      {showServicePopup && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/30 backdrop-blur-sm transition-opacity duration-300 animate-fadein">
+          <div className="bg-white/95 rounded-3xl shadow-2xl p-8 max-w-md w-full mx-4 relative border border-gray-200 animate-popup-slide-fade">
+            <button
+              onClick={closeServicePopup}
+              className="absolute top-3 right-3 text-gray-400 hover:text-gray-600 text-2xl font-light bg-white/80 rounded-full w-9 h-9 flex items-center justify-center shadow-sm border border-gray-100 transition-all duration-200 focus:outline-none"
+              aria-label="Fermer"
+            >
+              ×
+            </button>
+            <h3 className="text-xl font-bold mb-4 text-center text-gray-900 drop-shadow-sm">{selectedService}</h3>
+            <p className="text-gray-700 text-center leading-relaxed text-base md:text-lg">
+              Votre identité visuelle est le reflet de votre marque : elle traduit vos valeurs, attire votre cible, vous distingue de la concurrence et inspire la confiance. Nous la concevons sur mesure pour qu'elle parle à ceux que vous voulez convaincre.
+            </p>
+            <button
+              onClick={closeServicePopup}
+              className="mt-8 mx-auto block bg-black/80 text-white py-2 px-8 rounded-full hover:bg-black transition-colors text-sm shadow-md"
+            >
+              Fermer
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Cookie Popup */}
+      {showCookiePopup && (
+        <div className="fixed bottom-0 left-0 right-0 bg-black/90 text-white p-4 z-50 backdrop-blur-sm">
+          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex-1">
+              <p className="text-sm md:text-base">
+                🍪 Nous utilisons des cookies pour améliorer votre expérience sur notre site. 
+                En continuant à naviguer, vous acceptez notre utilisation des cookies.
+              </p>
+            </div>
+            <div className="flex gap-3">
+              <button
+                onClick={refuseCookies}
+                className="px-4 py-2 text-sm border border-gray-400 rounded-full hover:bg-gray-800 transition-colors"
+              >
+                Refuser
+              </button>
+              <button
+                onClick={acceptCookies}
+                className="px-4 py-2 text-sm bg-white text-black rounded-full hover:bg-gray-200 transition-colors"
+              >
+                Accepter
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Header Navigation */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-6 py-4">
@@ -61,41 +147,41 @@ export default function Home() {
         {/* Images défilantes */}
         <div className="absolute right-0 top-0 h-full w-1/3 hidden md:flex flex-col overflow-hidden">
           <div className="animate-slide-up flex flex-col">
-            <div className="w-full h-40 md:w-4/5 md:h-96 mb-4 rounded-lg overflow-hidden shadow-lg hover:shadow-glow transition-all duration-300 mx-auto">
+            <div className="w-full h-40 md:w-4/5 md:h-96 mb-4 rounded-lg overflow-hidden shadow-lg hover:shadow-black-glow transition-all duration-300 mx-auto">
               <img src="/site1.png" alt="Site 1" className="w-full h-full object-cover" />
             </div>
-            <div className="w-full h-40 md:w-4/5 md:h-96 mb-4 rounded-lg overflow-hidden shadow-lg hover:shadow-glow transition-all duration-300 mx-auto">
+            <div className="w-full h-40 md:w-4/5 md:h-96 mb-4 rounded-lg overflow-hidden shadow-lg hover:shadow-black-glow transition-all duration-300 mx-auto">
               <img src="/site2.png" alt="Site 2" className="w-full h-full object-cover" />
             </div>
-            <div className="w-full h-40 md:w-4/5 md:h-96 mb-4 rounded-lg overflow-hidden shadow-lg hover:shadow-glow transition-all duration-300 mx-auto">
+            <div className="w-full h-40 md:w-4/5 md:h-96 mb-4 rounded-lg overflow-hidden shadow-lg hover:shadow-black-glow transition-all duration-300 mx-auto">
               <img src="/site3.png" alt="Site 3" className="w-full h-full object-cover" />
             </div>
-            <div className="w-full h-40 md:w-4/5 md:h-96 mb-4 rounded-lg overflow-hidden shadow-lg hover:shadow-glow transition-all duration-300 mx-auto">
+            <div className="w-full h-40 md:w-4/5 md:h-96 mb-4 rounded-lg overflow-hidden shadow-lg hover:shadow-black-glow transition-all duration-300 mx-auto">
               <img src="/site4.png" alt="Site 4" className="w-full h-full object-cover" />
             </div>
-            <div className="w-full h-40 md:w-4/5 md:h-96 mb-4 rounded-lg overflow-hidden shadow-lg hover:shadow-glow transition-all duration-300 mx-auto">
+            <div className="w-full h-40 md:w-4/5 md:h-96 mb-4 rounded-lg overflow-hidden shadow-lg hover:shadow-black-glow transition-all duration-300 mx-auto">
               <img src="/site5.png" alt="Site 5" className="w-full h-full object-cover" />
             </div>
             {/* Duplicate pour le loop */}
-            <div className="w-full h-40 md:w-4/5 md:h-96 mb-4 rounded-lg overflow-hidden shadow-lg hover:shadow-glow transition-all duration-300 mx-auto">
+            <div className="w-full h-40 md:w-4/5 md:h-96 mb-4 rounded-lg overflow-hidden shadow-lg hover:shadow-black-glow transition-all duration-300 mx-auto">
               <img src="/site1.png" alt="Site 1" className="w-full h-full object-cover" />
             </div>
-            <div className="w-full h-40 md:w-4/5 md:h-96 mb-4 rounded-lg overflow-hidden shadow-lg hover:shadow-glow transition-all duration-300 mx-auto">
+            <div className="w-full h-40 md:w-4/5 md:h-96 mb-4 rounded-lg overflow-hidden shadow-lg hover:shadow-black-glow transition-all duration-300 mx-auto">
               <img src="/site2.png" alt="Site 2" className="w-full h-full object-cover" />
             </div>
-            <div className="w-full h-40 md:w-4/5 md:h-96 mb-4 rounded-lg overflow-hidden shadow-lg hover:shadow-glow transition-all duration-300 mx-auto">
+            <div className="w-full h-40 md:w-4/5 md:h-96 mb-4 rounded-lg overflow-hidden shadow-lg hover:shadow-black-glow transition-all duration-300 mx-auto">
               <img src="/site3.png" alt="Site 3" className="w-full h-full object-cover" />
             </div>
-            <div className="w-full h-40 md:w-4/5 md:h-96 mb-4 rounded-lg overflow-hidden shadow-lg hover:shadow-glow transition-all duration-300 mx-auto">
+            <div className="w-full h-40 md:w-4/5 md:h-96 mb-4 rounded-lg overflow-hidden shadow-lg hover:shadow-black-glow transition-all duration-300 mx-auto">
               <img src="/site4.png" alt="Site 4" className="w-full h-full object-cover" />
             </div>
-            <div className="w-full h-40 md:w-4/5 md:h-96 mb-4 rounded-lg overflow-hidden shadow-lg hover:shadow-glow transition-all duration-300 mx-auto">
+            <div className="w-full h-40 md:w-4/5 md:h-96 mb-4 rounded-lg overflow-hidden shadow-lg hover:shadow-black-glow transition-all duration-300 mx-auto">
               <img src="/site5.png" alt="Site 5" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
         
-        <div className="w-full md:w-2/3 px-8 py-20">
+        <div className="w-full md:w-2/3 px-8 py-20 bg-white rounded-3xl shadow-xl">
           <div className="text-center">
             <h1 className="text-4xl md:text-8xl font-bold text-black mb-8 leading-tight">
               Passez de l'idée à l'impact.
@@ -106,25 +192,34 @@ export default function Home() {
 
             {/* Avantages clés */}
             <div className="grid grid-cols-2 landscape:grid-cols-4 md:grid-cols-4 gap-4 md:gap-6 mb-8">
-              <div className="bg-gray-50 rounded-2xl p-4 md:p-6 text-center shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105">
+              {/* <GoldenBeam3D /> */}
+              <div 
+                className="relative bg-gray-50 rounded-2xl p-4 md:p-6 text-center transition-all duration-300 transform shadow-sm hover:shadow-lg hover:shadow-gray-400/50 hover:scale-105"
+              >
                 <div className="text-3xl md:text-4xl mb-2 select-none" role="img" aria-label="Palette">🎨</div>
-                <h3 className="text-sm md:text-base font-semibold mb-1">Créez votre image de marque</h3>
-                <p className="text-xs md:text-sm text-gray-600">Identité forte et cohérente</p>
+                <h3 className="text-sm md:text-base font-semibold mb-1">Marquez les esprits</h3>
+                <p className="text-xs md:text-sm text-gray-600">Une identité visuelle forte et cohérente pour imposer votre image dès le premier regard.</p>
               </div>
-              <div className="bg-gray-50 rounded-2xl p-4 md:p-6 text-center shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105">
+              <div 
+                className="bg-gray-50 rounded-2xl p-4 md:p-6 text-center transition-all duration-300 transform shadow-sm hover:shadow-lg hover:shadow-gray-400/50 hover:scale-105"
+              >
                 <div className="text-3xl md:text-4xl mb-2 select-none" role="img" aria-label="Licorne">🦄</div>
-                <h3 className="text-sm md:text-base font-semibold mb-1">Démarquez-vous</h3>
-                <p className="text-xs md:text-sm text-gray-600">Mettez votre singularité en avant</p>
+                <h3 className="text-sm md:text-base font-semibold mb-1">Faites la différence</h3>
+                <p className="text-xs md:text-sm text-gray-600">Un design unique et un storytelling qui met en avant ce qui vous rend inimitable.</p>
               </div>
-              <div className="bg-gray-50 rounded-2xl p-4 md:p-6 text-center shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105">
+              <div 
+                className="bg-gray-50 rounded-2xl p-4 md:p-6 text-center transition-all duration-300 transform shadow-sm hover:shadow-lg hover:shadow-gray-400/50 hover:scale-105"
+              >
                 <div className="text-3xl md:text-4xl mb-2 select-none" role="img" aria-label="Poignée de main">🤝</div>
-                <h3 className="text-sm md:text-base font-semibold mb-1">Fidélisez l'audience</h3>
-                <p className="text-xs md:text-sm text-gray-600">Lien durable avec vos clients</p>
+                <h3 className="text-sm md:text-base font-semibold mb-1">Créez du lien</h3>
+                <p className="text-xs md:text-sm text-gray-600">Des interfaces pensées pour engager et fidéliser votre audience naturellement.</p>
               </div>
-              <div className="bg-gray-50 rounded-2xl p-4 md:p-6 text-center shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105">
-                <div className="text-3xl md:text-4xl mb-2 select-none" role="img" aria-label="Graphique">📈</div>
-                <h3 className="text-sm md:text-base font-semibold mb-1">Rétention utilisateur</h3>
-                <p className="text-xs md:text-sm text-gray-600">Expérience engageante</p>
+              <div 
+                className="bg-gray-50 rounded-2xl p-4 md:p-6 text-center transition-all duration-300 transform shadow-sm hover:shadow-lg hover:shadow-gray-400/50 hover:scale-105"
+              >
+                <div className="text-3xl md:text-4xl mb-2 select-none" role="img" aria-label="Graphique">📊</div>
+                <h3 className="text-sm md:text-base font-semibold mb-1">Boostez vos résultats</h3>
+                <p className="text-xs md:text-sm text-gray-600">Une expérience fluide et performante pour maximiser l’impact et la conversion.</p>
               </div>
             </div>
 
@@ -221,7 +316,7 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-3 gap-8 items-stretch landscape:grid-cols-3 landscape:gap-4">
             {/* Formule Starter */}
-            <div className="bg-white rounded-2xl p-8 landscape:p-4 shadow-lg hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 flex flex-col h-full">
+            <div className="bg-white rounded-2xl p-8 landscape:p-4 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 flex flex-col h-full">
               <div className="text-center mb-6 landscape:mb-3">
                 <h3 className="text-2xl landscape:text-xl font-semibold text-black mb-2 landscape:mb-1">Starter</h3>
                 <p className="text-sm landscape:text-xs text-gray-500 mb-4 landscape:mb-2">Parfait pour débuter</p>
@@ -246,7 +341,7 @@ export default function Home() {
               <button className="bg-black text-white px-6 py-3 rounded-full text-base font-medium hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 mt-auto">Démarrer mon projet</button>
             </div>
             {/* Formule Pro */}
-            <div className="bg-white rounded-2xl p-8 landscape:p-4 shadow-xl border-2 border-black relative flex flex-col h-full hover:shadow-black-glow transition-all duration-300 transform hover:scale-105">
+            <div className="bg-white rounded-2xl p-8 landscape:p-4 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105">
               <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                 <div className="bg-black text-white text-sm landscape:text-xs px-4 py-1 rounded-full flex items-center gap-1 whitespace-nowrap">🔥 <span>Recommandé</span></div>
               </div>
@@ -272,7 +367,7 @@ export default function Home() {
               <button className="bg-black text-white px-6 py-3 rounded-full text-base font-medium hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 mt-auto">Accélérer ma croissance</button>
             </div>
             {/* Formule Premium */}
-            <div className="bg-white rounded-2xl p-8 landscape:p-4 shadow-lg hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 flex flex-col h-full">
+            <div className="bg-white rounded-2xl p-8 landscape:p-4 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 flex flex-col h-full">
               <div className="text-center mb-6 landscape:mb-3">
                 <h3 className="text-2xl landscape:text-xl font-semibold text-black mb-2 landscape:mb-1">Premium</h3>
                 <p className="text-sm landscape:text-xs text-gray-500 mb-4 landscape:mb-2">Solution complète sur mesure</p>
@@ -317,7 +412,7 @@ export default function Home() {
           
           <div className="grid md:grid-cols-3 gap-8">
             {/* Avis 1 */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-black-glow transition-all duration-300 transform hover:scale-105">
+            <div className="bg-white rounded-2xl p-8 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105">
               <div className="flex mb-4">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
@@ -339,7 +434,7 @@ export default function Home() {
             </div>
 
             {/* Avis 2 */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-black-glow transition-all duration-300 transform hover:scale-105">
+            <div className="bg-white rounded-2xl p-8 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105">
               <div className="flex mb-4">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
@@ -361,7 +456,7 @@ export default function Home() {
             </div>
 
             {/* Avis 3 */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-black-glow transition-all duration-300 transform hover:scale-105">
+            <div className="bg-white rounded-2xl p-8 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105">
               <div className="flex mb-4">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
@@ -392,7 +487,19 @@ export default function Home() {
             <h2 className="font-bold text-lg mb-2">Propulsemysite</h2>
             <p className="text-sm mb-4">Boostez votre présence en ligne. Création de sites web modernes, accompagnement et conseils personnalisés.</p>
             <div className="flex space-x-3">
-              <a href="mailto:brey.theodore4@gmail.com" className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 transition"><span aria-label="email" role="img">✉️</span></a>
+              <button
+                type="button"
+                onClick={() => {
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 transition"
+                aria-label="Aller au contact"
+              >
+                <span aria-label="email" role="img">✉️</span>
+              </button>
               <a href="https://www.propulsemysite.com" target="_blank" rel="noopener noreferrer" className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 transition"><span aria-label="site" role="img">🌐</span></a>
             </div>
           </div>
@@ -432,12 +539,30 @@ function ContactForm() {
   const [projectName, setProjectName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [projectDescription, setProjectDescription] = useState('');
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent('Demande de contact depuis Propulsemysite');
-    const body = encodeURIComponent(`Nom complet: ${name}\nEmail: ${email}\nNom du projet: ${projectName}\nNuméro de téléphone: ${phoneNumber}\n\nDescription du projet:\n${projectDescription}`);
-    window.location.href = `mailto:brey.theodore4@gmail.com?subject=${subject}&body=${body}`;
+    setStatus('sending');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          email,
+          message: `Nom du projet: ${projectName}\nNuméro: ${phoneNumber}\n\n${projectDescription}`
+        })
+      });
+      if (res.ok) {
+        setStatus('success');
+        setName(''); setEmail(''); setProjectName(''); setPhoneNumber(''); setProjectDescription('');
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
   };
 
   return (
@@ -515,9 +640,12 @@ function ContactForm() {
         <button 
           type="submit" 
           className="w-full bg-black text-white py-4 rounded-full font-semibold text-lg hover:bg-gray-800 transition-colors"
+          disabled={status === 'sending'}
         >
-          Envoyer
+          {status === 'sending' ? 'Envoi en cours...' : 'Envoyer'}
         </button>
+        {status === 'success' && <p className="text-green-600 text-center mt-4">Message envoyé !</p>}
+        {status === 'error' && <p className="text-red-600 text-center mt-4">Erreur d'envoi, réessayez.</p>}
       </form>
     </div>
   );
