@@ -176,7 +176,7 @@ export default function ChatPage() {
   const startCall = async (userName: string) => {
     const ok = await rtcStartCall(true)
     if (ok) {
-      setCallingUser(userName)
+    setCallingUser(userName)
     }
   }
 
@@ -553,7 +553,7 @@ export default function ChatPage() {
                   {localStream ? (
                     <video ref={localVideoRef} className="w-full h-full object-cover" muted autoPlay playsInline />
                   ) : (
-                    <span className="text-white text-xs">Moi</span>
+                  <span className="text-white text-xs">Moi</span>
                   )}
                 </div>
                 

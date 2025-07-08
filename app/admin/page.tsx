@@ -26,6 +26,13 @@ export default function AdminPage() {
 
   const [editingClient, setEditingClient] = useState<any | null>(null)
 
+  // Formulaire nouveau projet
+  const [projectForm, setProjectForm] = useState({
+    name: '',
+    description: '',
+    clientId: ''
+  })
+
   useEffect(() => {
     async function fetchClients() {
       if (!supabase) return
@@ -54,7 +61,7 @@ export default function AdminPage() {
           name: p.name,
           status: p.status,
           created_at: p.created_at,
-          client_name: p.clients?.name || '—'
+          client_name: Array.isArray(p.clients) && p.clients.length > 0 ? p.clients[0].name : '—'
         }))
         setProjects(mapped)
       }
@@ -120,6 +127,32 @@ export default function AdminPage() {
     if (!confirm) return
     await supabase.from('projects').delete().eq('id', id)
     setProjects(prev => prev.filter(p => p.id !== id))
+  }
+
+  // Créer projet
+  async function handleCreateProject() {
+    if (!supabase) return
+    if (!projectForm.name || !projectForm.clientId) return
+    const { data, error } = await supabase.from('projects').insert({
+      name: projectForm.name,
+      description: projectForm.description,
+      client_id: projectForm.clientId,
+      status: 'active'
+    }).select('id, name, created_at, status, clients(name)').single()
+    if (!error && data) {
+      const newProj = {
+        id: data.id,
+        name: data.name,
+        status: data.status,
+        created_at: data.created_at,
+        client_name: Array.isArray(data.clients) && data.clients.length > 0 ? data.clients[0].name : '—'
+      }
+      setProjects(prev => [newProj, ...prev])
+      setShowAddProject(false)
+      setProjectForm({ name: '', description: '', clientId: '' })
+    } else {
+      alert('Erreur création projet')
+    }
   }
 
   return (
@@ -458,6 +491,40 @@ export default function AdminPage() {
               >
                 Sauver
               </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Modal Créer Projet */}
+      {showAddProject && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-6 w-full max-w-md mx-4">
+            <h3 className="text-lg font-semibold text-black mb-4">Créer un nouveau projet</h3>
+
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Nom du projet</label>
+                <input type="text" value={projectForm.name} onChange={(e)=>setProjectForm(prev=>({...prev,name:e.target.value}))} className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-black focus:border-black" placeholder="Site Web" />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Client</label>
+                <select value={projectForm.clientId} onChange={(e)=>setProjectForm(prev=>({...prev,clientId:e.target.value}))} className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-black focus:border-black">
+                  <option value="">-- Sélectionner --</option>
+                  {clients.map(c=> (<option key={c.id} value={c.id}>{c.name}</option>))}
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                <textarea value={projectForm.description} onChange={(e)=>setProjectForm(prev=>({...prev,description:e.target.value}))} className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-black focus:border-black" rows={3} />
+              </div>
+            </div>
+
+            <div className="flex space-x-3 mt-6">
+              <button onClick={()=>setShowAddProject(false)} className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition">Annuler</button>
+              <button onClick={handleCreateProject} disabled={!projectForm.name || !projectForm.clientId} className="flex-1 px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition">Créer le projet</button>
             </div>
           </div>
         </div>
