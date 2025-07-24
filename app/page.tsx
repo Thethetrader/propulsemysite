@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import dynamic from "next/dynamic";
 import MacBookPro from './MacBookPro';
 // const GoldenBeam3D = dynamic(() => import("./GoldenBeam3D"), { ssr: false });
@@ -10,6 +10,7 @@ export default function Home() {
   const [showCookiePopup, setShowCookiePopup] = useState(false);
   const [showServicePopup, setShowServicePopup] = useState(false);
   const [selectedService, setSelectedService] = useState('');
+  const logoRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
     // Vérifier si l'utilisateur a déjà accepté les cookies
@@ -17,6 +18,16 @@ export default function Home() {
     if (!cookiesAccepted) {
       setShowCookiePopup(true);
     }
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!logoRef.current) return;
+      const y = window.scrollY;
+      logoRef.current.style.transform = `translateY(${y * 0.1}px)`;
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const acceptCookies = () => {
@@ -148,7 +159,7 @@ export default function Home() {
         <div className="w-full px-8 py-20 rounded-3xl shadow-xl relative z-20">
           <div className="text-center">
             {/* Logo */}
-            <img src="/fond.png" alt="Logo Propulsemysite" className="mx-auto w-48 h-48 md:w-60 md:h-60 object-contain mb-6" />
+            <img ref={logoRef} src="/fond.png" alt="Logo Propulsemysite" className="mx-auto w-48 h-48 md:w-60 md:h-60 object-contain mb-6 logo-glow" />
             <h1 className="text-4xl md:text-8xl font-bold text-black mb-8 leading-tight">
               Passez de l'idée à l'impact.
             </h1>
