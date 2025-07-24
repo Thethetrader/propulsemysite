@@ -216,7 +216,7 @@ export default function Home() {
             </h2>
             
             {/* Photos défilantes dans un MacBook Pro */}
-            <div className="overflow-x-auto overflow-y-hidden -mb-28 md:mb-0">
+            <div className="overflow-x-auto overflow-y-hidden -mb-12 md:mb-0">
               <div className="flex space-x-8 md:space-x-24 animate-scroll-horizontal min-w-max">
                 {/* Premier set d'images */}
                 <MacBookPro siteUrl="https://réflexologieplantaire.com" siteName="Réflexologie Plantaire" />
@@ -608,7 +608,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-b from-white to-pink-50 border-t border-gray-100 mt-8 md:mt-0">
+      <footer className="bg-gradient-to-b from-white to-pink-50 border-t border-gray-100 mt-0">
         <div className="max-w-4xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-4 gap-8 text-gray-700">
           <div>
             <h2 className="font-bold text-lg mb-2">Propulsemysite</h2>
