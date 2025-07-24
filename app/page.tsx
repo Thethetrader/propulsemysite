@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import dynamic from "next/dynamic";
+import MacBookPro from './MacBookPro';
 // const GoldenBeam3D = dynamic(() => import("./GoldenBeam3D"), { ssr: false });
 
 export default function Home() {
@@ -143,45 +144,8 @@ export default function Home() {
       )}
 
       {/* Hero Section */}
-      <main className="pt-24 w-full min-h-screen flex items-center relative overflow-hidden">
-        {/* Images défilantes */}
-        <div className="absolute right-0 top-0 h-full w-1/3 hidden md:flex flex-col overflow-hidden">
-          <div className="animate-slide-up flex flex-col">
-            <div className="w-full h-40 md:w-4/5 md:h-96 mb-4 rounded-lg overflow-hidden shadow-lg hover:shadow-black-glow transition-all duration-300 mx-auto">
-              <img src="/site1.png" alt="Site 1" className="w-full h-full object-cover" />
-            </div>
-            <div className="w-full h-40 md:w-4/5 md:h-96 mb-4 rounded-lg overflow-hidden shadow-lg hover:shadow-black-glow transition-all duration-300 mx-auto">
-              <img src="/site2.png" alt="Site 2" className="w-full h-full object-cover" />
-            </div>
-            <div className="w-full h-40 md:w-4/5 md:h-96 mb-4 rounded-lg overflow-hidden shadow-lg hover:shadow-black-glow transition-all duration-300 mx-auto">
-              <img src="/site3.png" alt="Site 3" className="w-full h-full object-cover" />
-            </div>
-            <div className="w-full h-40 md:w-4/5 md:h-96 mb-4 rounded-lg overflow-hidden shadow-lg hover:shadow-black-glow transition-all duration-300 mx-auto">
-              <img src="/site4.png" alt="Site 4" className="w-full h-full object-cover" />
-            </div>
-            <div className="w-full h-40 md:w-4/5 md:h-96 mb-4 rounded-lg overflow-hidden shadow-lg hover:shadow-black-glow transition-all duration-300 mx-auto">
-              <img src="/site5.png" alt="Site 5" className="w-full h-full object-cover" />
-            </div>
-            {/* Duplicate pour le loop */}
-            <div className="w-full h-40 md:w-4/5 md:h-96 mb-4 rounded-lg overflow-hidden shadow-lg hover:shadow-black-glow transition-all duration-300 mx-auto">
-              <img src="/site1.png" alt="Site 1" className="w-full h-full object-cover" />
-            </div>
-            <div className="w-full h-40 md:w-4/5 md:h-96 mb-4 rounded-lg overflow-hidden shadow-lg hover:shadow-black-glow transition-all duration-300 mx-auto">
-              <img src="/site2.png" alt="Site 2" className="w-full h-full object-cover" />
-            </div>
-            <div className="w-full h-40 md:w-4/5 md:h-96 mb-4 rounded-lg overflow-hidden shadow-lg hover:shadow-black-glow transition-all duration-300 mx-auto">
-              <img src="/site3.png" alt="Site 3" className="w-full h-full object-cover" />
-            </div>
-            <div className="w-full h-40 md:w-4/5 md:h-96 mb-4 rounded-lg overflow-hidden shadow-lg hover:shadow-black-glow transition-all duration-300 mx-auto">
-              <img src="/site4.png" alt="Site 4" className="w-full h-full object-cover" />
-            </div>
-            <div className="w-full h-40 md:w-4/5 md:h-96 mb-4 rounded-lg overflow-hidden shadow-lg hover:shadow-black-glow transition-all duration-300 mx-auto">
-              <img src="/site5.png" alt="Site 5" className="w-full h-full object-cover" />
-            </div>
-          </div>
-        </div>
-        
-        <div className="w-full md:w-2/3 px-8 py-20 bg-white rounded-3xl shadow-xl">
+      <main className="pt-24 w-full flex items-center relative overflow-hidden">
+        <div className="w-full px-8 py-20 bg-white rounded-3xl shadow-xl">
           <div className="text-center">
             <h1 className="text-4xl md:text-8xl font-bold text-black mb-8 leading-tight">
               Passez de l'idée à l'impact.
@@ -227,81 +191,33 @@ export default function Home() {
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
               Commencer maintenant
             </button>
+            
+            <h2 className="text-4xl md:text-6xl font-bold text-black mt-16 mb-8">
+              Nos réalisations
+            </h2>
+            
+            {/* Photos défilantes dans un MacBook Pro */}
+            <div className="overflow-hidden">
+              <div className="flex space-x-8 md:space-x-24 animate-scroll-horizontal">
+                {/* Premier set d'images */}
+                <MacBookPro siteUrl="https://réflexologieplantaire.com" siteName="Réflexologie Plantaire" />
+                <MacBookPro siteUrl="https://simplifiedtradingjournal.com" siteName="Trading Journal" />
+                <MacBookPro siteUrl="https://sadserrurerie.com" siteName="Sad Serrurerie" />
+                <MacBookPro siteUrl="https://www.cap-kine-du-sport.com" siteName="CAP Kiné du Sport" />
+                <MacBookPro siteUrl="https://rococo-capybara-66cb3f.netlify.app" siteName="Putain de Malédiction" />
+                <MacBookPro siteUrl="https://atelierduplombier.com" siteName="L'Atelier du Plombier" />
+                {/* Deuxième set pour boucle infinie */}
+                <MacBookPro siteUrl="https://réflexologieplantaire.com" siteName="Réflexologie Plantaire" />
+                <MacBookPro siteUrl="https://simplifiedtradingjournal.com" siteName="Trading Journal" />
+                <MacBookPro siteUrl="https://sadserrurerie.com" siteName="Sad Serrurerie" />
+                <MacBookPro siteUrl="https://www.cap-kine-du-sport.com" siteName="CAP Kiné du Sport" />
+                <MacBookPro siteUrl="https://rococo-capybara-66cb3f.netlify.app" siteName="Putain de Malédiction" />
+                <MacBookPro siteUrl="https://atelierduplombier.com" siteName="L'Atelier du Plombier" />
+              </div>
+            </div>
           </div>
         </div>
       </main>
-
-      {/* Section mobile uniquement - Photos défilantes verticales */}
-      <section className="md:hidden py-8 bg-white">
-        <div className="w-full overflow-hidden" style={{height: '1008px'}}>
-          <div className="animate-slide-up-mobile flex flex-col">
-            {/* Premier set d'images */}
-            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site1.png?v=2024" alt="Site 1" className="w-full h-full object-cover" />
-            </div>
-            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site2.png?v=2024" alt="Site 2" className="w-full h-full object-cover" />
-            </div>
-            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site3.png?v=2024" alt="Site 3" className="w-full h-full object-cover" />
-            </div>
-            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site4.png?v=2024" alt="Site 4" className="w-full h-full object-cover" />
-            </div>
-            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site5.png?v=2024" alt="Site 5" className="w-full h-full object-cover" />
-            </div>
-            {/* Deuxième set d'images */}
-            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site1.png?v=2024" alt="Site 1" className="w-full h-full object-cover" />
-            </div>
-            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site2.png?v=2024" alt="Site 2" className="w-full h-full object-cover" />
-            </div>
-            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site3.png?v=2024" alt="Site 3" className="w-full h-full object-cover" />
-            </div>
-            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site4.png?v=2024" alt="Site 4" className="w-full h-full object-cover" />
-            </div>
-            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site5.png?v=2024" alt="Site 5" className="w-full h-full object-cover" />
-            </div>
-            {/* Troisième set d'images */}
-            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site1.png?v=2024" alt="Site 1" className="w-full h-full object-cover" />
-            </div>
-            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site2.png?v=2024" alt="Site 2" className="w-full h-full object-cover" />
-            </div>
-            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site3.png?v=2024" alt="Site 3" className="w-full h-full object-cover" />
-            </div>
-            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site4.png?v=2024" alt="Site 4" className="w-full h-full object-cover" />
-            </div>
-            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site5.png?v=2024" alt="Site 5" className="w-full h-full object-cover" />
-            </div>
-            {/* Quatrième set d'images */}
-            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site1.png?v=2024" alt="Site 1" className="w-full h-full object-cover" />
-            </div>
-            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site2.png?v=2024" alt="Site 2" className="w-full h-full object-cover" />
-            </div>
-            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site3.png?v=2024" alt="Site 3" className="w-full h-full object-cover" />
-            </div>
-            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site4.png?v=2024" alt="Site 4" className="w-full h-full object-cover" />
-            </div>
-            <div className="w-full h-60 mb-4 rounded-lg overflow-hidden shadow-lg mx-auto">
-              <img src="/site5.png?v=2024" alt="Site 5" className="w-full h-full object-cover" />
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Section Prix */}
       <section id="prix" className="py-20 bg-gray-50">

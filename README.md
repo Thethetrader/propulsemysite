@@ -1,5 +1,41 @@
 # Propulsemysite
 
+## 🚨 CHECKPOINT MACBOOK CAROUSEL - VERSION DESKTOP PARFAITE ✅
+
+### 📅 **DATE:** Décembre 2024
+### 🎯 **ÉTAT:** Carousel MacBook avec sites live - Version desktop optimisée
+
+---
+
+## ✅ CONFIGURATION MACBOOK CAROUSEL - DESKTOP
+
+### 1. **Taille des Mac** ✅
+- **Desktop:** `w-96` + `scale-150` (plus grands)
+- **Mobile:** `w-80` + `scale-125` (taille normale)
+
+### 2. **Taille des Sites à l'Intérieur** ✅
+- **Largeur:** `w-[63%]` (desktop) / `w-[60%]` (mobile)
+- **Hauteur:** `h-1/2` (réduite de 1cm)
+
+### 3. **Défilement** ✅
+- **Desktop:** Défilement horizontal avec `animate-scroll-horizontal`
+- **Mobile:** Défilement horizontal avec `animate-scroll-horizontal`
+
+### 4. **Sites Live Intégrés** ✅
+- Réflexologie Plantaire
+- Trading Journal
+- Sad Serrurerie
+- CAP Kiné du Sport
+- Putain de Malédiction
+- L'Atelier du Plombier
+
+### 5. **Fichiers de Configuration** ✅
+- `app/MacBookPro.tsx` : Composant Mac avec iframe
+- `app/page.tsx` : Carousel avec sites
+- `app/globals.css` : Animations de défilement
+
+---
+
 ## 🚨 CHECKPOINT IMPORTANT - FONCTIONNALITÉ EMAIL OPÉRATIONNELLE ✅
 
 ### 📅 **DATE:** Décembre 2024
