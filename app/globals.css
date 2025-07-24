@@ -309,9 +309,9 @@ body {
 
 /* Gold shadow glow */
 .logo-glow {
-  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.5));
-  transition: filter 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.35), 0 0 20px rgba(255, 215, 0, 0.2);
+  transition: box-shadow 0.3s ease;
 }
 .logo-glow:hover {
-  filter: drop-shadow(0 0 16px rgba(255, 215, 0, 0.7));
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.6), 0 0 25px rgba(255, 215, 0, 0.4);
 }
