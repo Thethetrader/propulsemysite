@@ -145,10 +145,18 @@ export default function Home() {
 
       {/* Hero Section */}
       <main className="pt-24 w-full flex items-center relative overflow-hidden">
+        {/* Background gradient */}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white to-[#f9f7f4]"></div>
+        {/* Mountain SVG background */}
+        <div className="absolute bottom-0 left-0 w-full -z-10 pointer-events-none opacity-70">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full h-auto">
+            <path fill="#f2f0ec" fillOpacity="1" d="M0,256L60,240C120,224,240,192,360,176C480,160,600,160,720,165.3C840,171,960,181,1080,176C1200,171,1320,149,1380,138.7L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z" />
+          </svg>
+        </div>
         <div className="w-full px-8 py-20 rounded-3xl shadow-xl relative z-20">
           <div className="text-center">
             {/* Logo */}
-            <img src="/fond.jpg" alt="Logo Propulsemysite" className="mx-auto w-32 h-32 md:w-40 md:h-40 object-contain mb-6" />
+            <img src="/fond.png" alt="Logo Propulsemysite" className="mx-auto w-48 h-48 md:w-60 md:h-60 object-contain mb-6" />
             <h1 className="text-4xl md:text-8xl font-bold text-black mb-8 leading-tight">
               Passez de l'idée à l'impact.
             </h1>
