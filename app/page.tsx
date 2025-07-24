@@ -145,7 +145,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <main className="pt-24 w-full flex items-center relative overflow-hidden">
-        <div className="w-full px-8 py-20 bg-white rounded-3xl shadow-xl">
+        <div className="w-full px-8 py-20 rounded-3xl shadow-xl relative z-20">
           <div className="text-center">
             <h1 className="text-4xl md:text-8xl font-bold text-black mb-8 leading-tight">
               Passez de l'idée à l'impact.
@@ -192,13 +192,13 @@ export default function Home() {
               Commencer maintenant
             </button>
             
-            <h2 className="text-4xl md:text-6xl font-bold text-black mt-16 mb-8">
+            <h2 className="text-4xl md:text-6xl font-bold text-black mt-8 md:mt-16 mb-1 md:mb-8">
               Nos réalisations
             </h2>
             
             {/* Photos défilantes dans un MacBook Pro */}
-            <div className="overflow-hidden">
-              <div className="flex space-x-8 md:space-x-24 animate-scroll-horizontal">
+            <div className="overflow-x-auto overflow-y-hidden -mb-28 md:mb-0">
+              <div className="flex space-x-8 md:space-x-24 animate-scroll-horizontal min-w-max">
                 {/* Premier set d'images */}
                 <MacBookPro siteUrl="https://réflexologieplantaire.com" siteName="Réflexologie Plantaire" />
                 <MacBookPro siteUrl="https://simplifiedtradingjournal.com" siteName="Trading Journal" />
@@ -220,7 +220,7 @@ export default function Home() {
       </main>
 
       {/* Section Prix */}
-      <section id="prix" className="py-20 bg-gray-50">
+      <section id="prix" className="py-0 md:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-16">
             <h2 className="text-2xl md:text-5xl font-light text-black mb-6">
