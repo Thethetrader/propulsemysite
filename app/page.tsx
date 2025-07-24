@@ -238,7 +238,7 @@ export default function Home() {
       </section>
 
       {/* Section Prix */}
-      <section id="prix" className="py-0 md:py-20 bg-gradient-to-b from-white to-pink-50">
+      <section id="prix" className="py-0 md:py-20 bg-gradient-to-b from-white to-pink-50 mt-28 md:mt-0">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-bold text-black mb-6">
@@ -333,7 +333,7 @@ export default function Home() {
       </div>
 
       {/* Section Témoignages */}
-<section className="py-16 bg-gradient-to-b from-pink-100 to-pink-50">
+<section className="py-16 pb-32 md:pb-16 bg-gradient-to-b from-pink-100 to-pink-50">
         <div className="max-w-6xl mx-auto px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-6xl font-bold text-black mb-4">
@@ -349,7 +349,7 @@ export default function Home() {
           <div className="overflow-x-auto overflow-y-hidden -mb-28 md:mb-0">
             <div className="flex space-x-8 animate-scroll-horizontal min-w-max pl-4">
               {/* Premier set d'avis */}
-              <div className="bg-white rounded-2xl p-8 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-80 md:w-96 flex-shrink-0">
+              <div className="bg-white rounded-2xl p-2 md:p-8 h-56 md:h-auto shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-64 md:w-96 flex-shrink-0">
                 <div className="flex mb-4">
                   {[...Array(5)].map((_, i) => (
                     <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
@@ -370,7 +370,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-8 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-80 md:w-96 flex-shrink-0">
+              <div className="bg-white rounded-2xl p-2 md:p-8 h-56 md:h-auto shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-64 md:w-96 flex-shrink-0">
                 <div className="flex mb-4">
                   {[...Array(5)].map((_, i) => (
                     <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
@@ -391,7 +391,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-8 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-80 md:w-96 flex-shrink-0">
+              <div className="bg-white rounded-2xl p-2 md:p-8 h-56 md:h-auto shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-64 md:w-96 flex-shrink-0">
                 <div className="flex mb-4">
                   {[...Array(5)].map((_, i) => (
                     <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
@@ -412,7 +412,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-8 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-80 md:w-96 flex-shrink-0">
+              <div className="bg-white rounded-2xl p-2 md:p-8 h-56 md:h-auto shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-64 md:w-96 flex-shrink-0">
                 <div className="flex mb-4">
                   {[...Array(5)].map((_, i) => (
                     <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
@@ -433,7 +433,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-8 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-80 md:w-96 flex-shrink-0">
+              <div className="bg-white rounded-2xl p-2 md:p-8 h-56 md:h-auto shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-64 md:w-96 flex-shrink-0">
                 <div className="flex mb-4">
                   {[...Array(5)].map((_, i) => (
                     <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
@@ -455,7 +455,7 @@ export default function Home() {
               </div>
 
               {/* Deuxième set pour boucle infinie */}
-              <div className="bg-white rounded-2xl p-8 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-80 md:w-96 flex-shrink-0">
+              <div className="bg-white rounded-2xl p-2 md:p-8 h-56 md:h-auto shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-64 md:w-96 flex-shrink-0">
                 <div className="flex mb-4">
                   {[...Array(5)].map((_, i) => (
                     <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
@@ -476,7 +476,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-8 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-80 md:w-96 flex-shrink-0">
+              <div className="bg-white rounded-2xl p-2 md:p-8 h-56 md:h-auto shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-64 md:w-96 flex-shrink-0">
                 <div className="flex mb-4">
                   {[...Array(5)].map((_, i) => (
                     <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
@@ -497,7 +497,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-8 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-80 md:w-96 flex-shrink-0">
+              <div className="bg-white rounded-2xl p-2 md:p-8 h-56 md:h-auto shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-64 md:w-96 flex-shrink-0">
                 <div className="flex mb-4">
                   {[...Array(5)].map((_, i) => (
                     <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
@@ -518,7 +518,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-8 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-80 md:w-96 flex-shrink-0">
+              <div className="bg-white rounded-2xl p-2 md:p-8 h-56 md:h-auto shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-64 md:w-96 flex-shrink-0">
                 <div className="flex mb-4">
                   {[...Array(5)].map((_, i) => (
                     <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
@@ -539,7 +539,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-8 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-80 md:w-96 flex-shrink-0">
+              <div className="bg-white rounded-2xl p-2 md:p-8 h-56 md:h-auto shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-64 md:w-96 flex-shrink-0">
                 <div className="flex mb-4">
                   {[...Array(5)].map((_, i) => (
                     <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
@@ -561,7 +561,7 @@ export default function Home() {
               </div>
 
               {/* Troisième set pour éliminer tout espace vide */}
-              <div className="bg-white rounded-2xl p-8 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-80 md:w-96 flex-shrink-0">
+              <div className="bg-white rounded-2xl p-2 md:p-8 h-56 md:h-auto shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-64 md:w-96 flex-shrink-0">
                 <div className="flex mb-4">
                   {[...Array(5)].map((_, i) => (
                     <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
@@ -582,7 +582,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-8 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-80 md:w-96 flex-shrink-0">
+              <div className="bg-white rounded-2xl p-2 md:p-8 h-56 md:h-auto shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-64 md:w-96 flex-shrink-0">
                 <div className="flex mb-4">
                   {[...Array(5)].map((_, i) => (
                     <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
@@ -608,7 +608,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-b from-white to-pink-50 border-t border-gray-100">
+      <footer className="bg-gradient-to-b from-white to-pink-50 border-t border-gray-100 mt-8 md:mt-0">
         <div className="max-w-4xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-4 gap-8 text-gray-700">
           <div>
             <h2 className="font-bold text-lg mb-2">Propulsemysite</h2>
@@ -693,7 +693,7 @@ function ContactForm() {
   };
 
   return (
-    <div className="flex items-center justify-center px-4 py-16">
+    <div className="flex items-center justify-center px-4 pt-16 pb-8">
       <form onSubmit={handleSubmit} className="bg-white rounded-3xl shadow-xl p-8 w-full max-w-3xl hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 border border-gray-200">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold mb-4 text-black">Contact / Réserver un appel</h2>
