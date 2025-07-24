@@ -148,7 +148,7 @@ export default function Home() {
         <div className="w-full px-8 py-20 rounded-3xl shadow-xl relative z-20">
           <div className="text-center">
             {/* Logo */}
-            <img src="/fond.jpeg" alt="Logo Propulsemysite" className="mx-auto w-32 h-32 md:w-40 md:h-40 object-contain mb-6" />
+            <img src="/fond.jpg" alt="Logo Propulsemysite" className="mx-auto w-32 h-32 md:w-40 md:h-40 object-contain mb-6" />
             <h1 className="text-4xl md:text-8xl font-bold text-black mb-8 leading-tight">
               Passez de l'idée à l'impact.
             </h1>
