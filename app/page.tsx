@@ -106,7 +106,7 @@ export default function Home() {
       )}
 
       {/* Header Navigation */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200 shadow-md">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <button 
@@ -155,7 +155,7 @@ export default function Home() {
       )}
 
       {/* Hero Section */}
-      <main className="pt-24 w-full flex items-center relative overflow-hidden">
+      <main className="pt-24 w-full flex items-center relative overflow-hidden bg-gradient-to-b from-pink-50 to-white">
         <div className="w-full px-8 py-20 rounded-3xl shadow-xl relative z-20">
           <div className="text-center">
             {/* Logo */}
@@ -171,28 +171,28 @@ export default function Home() {
             <div className="grid grid-cols-2 landscape:grid-cols-4 md:grid-cols-4 gap-4 md:gap-6 mb-8">
               {/* <GoldenBeam3D /> */}
               <div 
-                className="relative bg-gray-50 rounded-2xl p-4 md:p-6 text-center transition-all duration-300 transform shadow-sm hover:shadow-lg hover:shadow-gray-400/50 hover:scale-105"
+                className="relative bg-gradient-to-r from-pink-50 via-white to-pink-50 rounded-2xl p-4 md:p-6 text-center transition-all duration-300 transform shadow-sm hover:shadow-lg hover:shadow-gray-400/50 hover:scale-105"
               >
                 <div className="text-3xl md:text-4xl mb-2 select-none" role="img" aria-label="Palette">🎨</div>
                 <h3 className="text-sm md:text-base font-semibold mb-1">Marquez les esprits</h3>
                 <p className="text-xs md:text-sm text-gray-600">Une identité visuelle forte et cohérente pour imposer votre image dès le premier regard.</p>
               </div>
               <div 
-                className="bg-gray-50 rounded-2xl p-4 md:p-6 text-center transition-all duration-300 transform shadow-sm hover:shadow-lg hover:shadow-gray-400/50 hover:scale-105"
+                className="bg-gradient-to-r from-pink-50 via-white to-pink-50 rounded-2xl p-4 md:p-6 text-center transition-all duration-300 transform shadow-sm hover:shadow-lg hover:shadow-gray-400/50 hover:scale-105"
               >
                 <div className="text-3xl md:text-4xl mb-2 select-none" role="img" aria-label="Licorne">🦄</div>
                 <h3 className="text-sm md:text-base font-semibold mb-1">Faites la différence</h3>
                 <p className="text-xs md:text-sm text-gray-600">Un design unique et un storytelling qui met en avant ce qui vous rend inimitable.</p>
               </div>
               <div 
-                className="bg-gray-50 rounded-2xl p-4 md:p-6 text-center transition-all duration-300 transform shadow-sm hover:shadow-lg hover:shadow-gray-400/50 hover:scale-105"
+                className="bg-gradient-to-r from-pink-50 via-white to-pink-50 rounded-2xl p-4 md:p-6 text-center transition-all duration-300 transform shadow-sm hover:shadow-lg hover:shadow-gray-400/50 hover:scale-105"
               >
                 <div className="text-3xl md:text-4xl mb-2 select-none" role="img" aria-label="Poignée de main">🤝</div>
                 <h3 className="text-sm md:text-base font-semibold mb-1">Créez du lien</h3>
                 <p className="text-xs md:text-sm text-gray-600">Des interfaces pensées pour engager et fidéliser votre audience naturellement.</p>
               </div>
               <div 
-                className="bg-gray-50 rounded-2xl p-4 md:p-6 text-center transition-all duration-300 transform shadow-sm hover:shadow-lg hover:shadow-gray-400/50 hover:scale-105"
+                className="bg-gradient-to-r from-pink-50 via-white to-pink-50 rounded-2xl p-4 md:p-6 text-center transition-all duration-300 transform shadow-sm hover:shadow-lg hover:shadow-gray-400/50 hover:scale-105"
               >
                 <div className="text-3xl md:text-4xl mb-2 select-none" role="img" aria-label="Graphique">📊</div>
                 <h3 className="text-sm md:text-base font-semibold mb-1">Boostez vos résultats</h3>
@@ -204,8 +204,14 @@ export default function Home() {
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
               Commencer maintenant
             </button>
-            
-            <h2 className="text-4xl md:text-6xl font-bold text-black mt-8 md:mt-16 mb-1 md:mb-8">
+          </div>
+        </div>
+      </main>
+
+      {/* Section "Nos réalisations" - Pas de fond */}
+      <section className="py-2">
+        <div className="text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-black mt-2 md:mt-4 mb-1 md:mb-8">
               Nos réalisations
             </h2>
             
@@ -228,15 +234,14 @@ export default function Home() {
                 <MacBookPro siteUrl="https://atelierduplombier.com" siteName="L'Atelier du Plombier" />
               </div>
             </div>
-          </div>
         </div>
-      </main>
+      </section>
 
       {/* Section Prix */}
-      <section id="prix" className="py-0 md:py-20 bg-gray-50">
+      <section id="prix" className="py-0 md:py-20 bg-gradient-to-b from-white to-pink-50">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-16">
-            <h2 className="text-2xl md:text-5xl font-light text-black mb-6">
+            <h2 className="text-4xl md:text-6xl font-bold text-black mb-6">
               Nos solutions digitales
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -245,7 +250,7 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-3 gap-8 items-stretch landscape:grid-cols-3 landscape:gap-4">
             {/* Formule Starter */}
-            <div className="bg-white rounded-2xl p-8 landscape:p-4 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 flex flex-col h-full">
+            <div className="bg-gradient-to-r from-pink-50 via-white to-pink-50 rounded-2xl p-8 landscape:p-4 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 flex flex-col h-full">
               <div className="text-center mb-6 landscape:mb-3">
                 <h3 className="text-2xl landscape:text-xl font-semibold text-black mb-2 landscape:mb-1">Starter</h3>
                 <p className="text-sm landscape:text-xs text-gray-500 mb-4 landscape:mb-2">Parfait pour débuter</p>
@@ -270,7 +275,7 @@ export default function Home() {
               <button className="bg-black text-white px-6 py-3 rounded-full text-base font-medium hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 mt-auto">Démarrer mon projet</button>
             </div>
             {/* Formule Pro */}
-            <div className="bg-white rounded-2xl p-8 landscape:p-4 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105">
+            <div className="bg-gradient-to-r from-pink-50 via-white to-pink-50 rounded-2xl p-8 landscape:p-4 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105">
               <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                 <div className="bg-black text-white text-sm landscape:text-xs px-4 py-1 rounded-full flex items-center gap-1 whitespace-nowrap">🔥 <span>Recommandé</span></div>
               </div>
@@ -296,7 +301,7 @@ export default function Home() {
               <button className="bg-black text-white px-6 py-3 rounded-full text-base font-medium hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 mt-auto">Accélérer ma croissance</button>
             </div>
             {/* Formule Premium */}
-            <div className="bg-white rounded-2xl p-8 landscape:p-4 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 flex flex-col h-full">
+            <div className="bg-gradient-to-r from-pink-50 via-white to-pink-50 rounded-2xl p-8 landscape:p-4 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 flex flex-col h-full">
               <div className="text-center mb-6 landscape:mb-3">
                 <h3 className="text-2xl landscape:text-xl font-semibold text-black mb-2 landscape:mb-1">Premium</h3>
                 <p className="text-sm landscape:text-xs text-gray-500 mb-4 landscape:mb-2">Solution complète sur mesure</p>
@@ -323,85 +328,278 @@ export default function Home() {
       </section>
 
       {/* Formulaire de contact (sous la landing page, avant le footer) */}
-      <div id="contact">
+      <div id="contact" className="bg-gradient-to-b from-pink-50 to-pink-100">
         <ContactForm />
       </div>
 
       {/* Section Témoignages */}
-      <section className="py-16 bg-gray-100">
+<section className="py-16 bg-gradient-to-b from-pink-100 to-pink-50">
         <div className="max-w-6xl mx-auto px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
+            <h2 className="text-4xl md:text-6xl font-bold text-black mb-4">
               Ce que disent nos clients
             </h2>
             <p className="text-gray-600 text-lg">
               Découvrez l'expérience de nos clients satisfaits
             </p>
           </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Avis 1 */}
-            <div className="bg-white rounded-2xl p-8 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105">
-              <div className="flex mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
-              </div>
-              <p className="text-gray-700 mb-4 italic">
-                "Super rendu ! Le site de Canal Poké reflète parfaitement l'esprit du resto."
-              </p>
-              <div className="flex items-center">
-                <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">
-                  M
+        </div>
+        
+        <div className="w-full">
+          <div className="overflow-x-auto overflow-y-hidden -mb-28 md:mb-0">
+            <div className="flex space-x-8 animate-scroll-horizontal min-w-max pl-4">
+              {/* Premier set d'avis */}
+              <div className="bg-white rounded-2xl p-8 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-80 md:w-96 flex-shrink-0">
+                <div className="flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
                 </div>
-                <div>
-                  <p className="font-semibold text-black">Mathieu R.</p>
+                <p className="text-gray-700 mb-4 italic">
+                  "Super rendu ! Le site de Canal Poké reflète parfaitement l'esprit du resto."
+                </p>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">
+                    M
+                  </div>
+                  <div>
+                    <p className="font-semibold text-black">Mathieu R.</p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Avis 2 */}
-            <div className="bg-white rounded-2xl p-8 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105">
-              <div className="flex mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
-              </div>
-              <p className="text-gray-700 mb-4 italic">
-                "Simple, pro et impactant. Le site donne vraiment envie de découvrir Putain de Malédiction."
-              </p>
-              <div className="flex items-center">
-                <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">
-                  T
+              <div className="bg-white rounded-2xl p-8 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-80 md:w-96 flex-shrink-0">
+                <div className="flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
                 </div>
-                <div>
-                  <p className="font-semibold text-black">Tonton</p>
+                <p className="text-gray-700 mb-4 italic">
+                  "Simple, pro et impactant. Le site donne vraiment envie de découvrir Putain de Malédiction."
+                </p>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">
+                    T
+                  </div>
+                  <div>
+                    <p className="font-semibold text-black">Tonton</p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Avis 3 */}
-            <div className="bg-white rounded-2xl p-8 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105">
-              <div className="flex mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
-              </div>
-              <p className="text-gray-700 mb-4 italic">
-                "Très satisfait du résultat. Le site est clair, dynamique et inspire confiance."
-              </p>
-              <div className="flex items-center">
-                <div className="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">
-                  T
+              <div className="bg-white rounded-2xl p-8 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-80 md:w-96 flex-shrink-0">
+                <div className="flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
                 </div>
-                <div>
-                  <p className="font-semibold text-black">Thomas G.</p>
+                <p className="text-gray-700 mb-4 italic">
+                  "Très satisfait du résultat. Le site est clair, dynamique et inspire confiance."
+                </p>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">
+                    T
+                  </div>
+                  <div>
+                    <p className="font-semibold text-black">Thomas G.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-80 md:w-96 flex-shrink-0">
+                <div className="flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4 italic">
+                  "Interface moderne et intuitive. Excellent travail sur l'expérience utilisateur."
+                </p>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">
+                    S
+                  </div>
+                  <div>
+                    <p className="font-semibold text-black">Sophie L.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-80 md:w-96 flex-shrink-0">
+                <div className="flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4 italic">
+                  "Délais respectés, communication parfaite. Un vrai professionnel !"
+                </p>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">
+                    D
+                  </div>
+                  <div>
+                    <p className="font-semibold text-black">David M.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Deuxième set pour boucle infinie */}
+              <div className="bg-white rounded-2xl p-8 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-80 md:w-96 flex-shrink-0">
+                <div className="flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4 italic">
+                  "Super rendu ! Le site de Canal Poké reflète parfaitement l'esprit du resto."
+                </p>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">
+                    M
+                  </div>
+                  <div>
+                    <p className="font-semibold text-black">Mathieu R.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-80 md:w-96 flex-shrink-0">
+                <div className="flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4 italic">
+                  "Simple, pro et impactant. Le site donne vraiment envie de découvrir Putain de Malédiction."
+                </p>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">
+                    T
+                  </div>
+                  <div>
+                    <p className="font-semibold text-black">Tonton</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-80 md:w-96 flex-shrink-0">
+                <div className="flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4 italic">
+                  "Très satisfait du résultat. Le site est clair, dynamique et inspire confiance."
+                </p>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">
+                    T
+                  </div>
+                  <div>
+                    <p className="font-semibold text-black">Thomas G.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-80 md:w-96 flex-shrink-0">
+                <div className="flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4 italic">
+                  "Interface moderne et intuitive. Excellent travail sur l'expérience utilisateur."
+                </p>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">
+                    S
+                  </div>
+                  <div>
+                    <p className="font-semibold text-black">Sophie L.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-80 md:w-96 flex-shrink-0">
+                <div className="flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4 italic">
+                  "Délais respectés, communication parfaite. Un vrai professionnel !"
+                </p>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">
+                    D
+                  </div>
+                  <div>
+                    <p className="font-semibold text-black">David M.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Troisième set pour éliminer tout espace vide */}
+              <div className="bg-white rounded-2xl p-8 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-80 md:w-96 flex-shrink-0">
+                <div className="flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4 italic">
+                  "Super rendu ! Le site de Canal Poké reflète parfaitement l'esprit du resto."
+                </p>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">
+                    M
+                  </div>
+                  <div>
+                    <p className="font-semibold text-black">Mathieu R.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 shadow hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 w-80 md:w-96 flex-shrink-0">
+                <div className="flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4 italic">
+                  "Simple, pro et impactant. Le site donne vraiment envie de découvrir Putain de Malédiction."
+                </p>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">
+                    T
+                  </div>
+                  <div>
+                    <p className="font-semibold text-black">Tonton</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -410,7 +608,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-gray-100 mt-16">
+      <footer className="bg-gradient-to-b from-white to-pink-50 border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-4 gap-8 text-gray-700">
           <div>
             <h2 className="font-bold text-lg mb-2">Propulsemysite</h2>
@@ -495,8 +693,8 @@ function ContactForm() {
   };
 
   return (
-    <div className="flex items-center justify-center bg-white px-4 py-16">
-      <form onSubmit={handleSubmit} className="bg-white rounded-3xl shadow-xl p-8 w-full max-w-3xl hover:shadow-black-glow transition-all duration-300 transform hover:scale-105">
+    <div className="flex items-center justify-center px-4 py-16">
+      <form onSubmit={handleSubmit} className="bg-white rounded-3xl shadow-xl p-8 w-full max-w-3xl hover:shadow-black-glow transition-all duration-300 transform hover:scale-105 border border-gray-200">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold mb-4 text-black">Contact / Réserver un appel</h2>
           <p className="text-gray-600 leading-relaxed">
