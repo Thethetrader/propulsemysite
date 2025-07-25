@@ -209,7 +209,7 @@ export default function Home() {
       </main>
 
       {/* Section "Nos réalisations" - Pas de fond */}
-      <section className="py-2">
+      <section className="py-2 -mt-6 md:mt-0">
         <div className="text-center">
             <h2 className="text-4xl md:text-6xl font-bold text-black mt-2 md:mt-4 mb-1 md:mb-8">
               Nos réalisations
@@ -238,7 +238,7 @@ export default function Home() {
       </section>
 
       {/* Section Prix */}
-      <section id="prix" className="py-0 md:py-20 bg-gradient-to-b from-white to-pink-50 mt-28 md:mt-0">
+      <section id="prix" className="py-0 md:py-20 bg-gradient-to-b from-white to-pink-50 mt-12 md:mt-0">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-bold text-black mb-6">
